@@ -1,0 +1,215 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #0c1830;
+  --primary-color: #1b305a;
+  --secondary-color: rgb(6, 106, 123);
+  --button-color: rgb(0, 166, 255);
+  --hover-color: rgb(8, 181, 211);
+  --nav-shadow:#0c1830;
+  --image-shadow: rgb(8, 181, 211);
+}
+
+.dark-mode {
+  --bg-color: #0c1830;
+  --text-color: #ffffff;
+  --primary-color: #ffffff;
+  --secondary-color: rgb(133, 213, 229);
+  --button-color: rgb(0, 166, 255);
+  --hover-color: rgb(0, 200, 255);
+  --nav-shadow:#ffffff;
+  --image-shadow:rgb(8, 181, 211);
+  background-color: var(--bg-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+h1 {
+  font-size: 35px;
+  font-weight: 1000;
+  color: var(--primary-color);
+  position: relative;
+  z-index: 10;
+}
+span{
+  color: var(--hover-color);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 50px;
+  padding-top: 15px;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px -4px var(--nav-shadow);
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.nav-items ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+.nav-items ul li {
+  list-style: none;
+}
+
+.nav-items ul li a {
+  font-weight: 400;
+}
+
+.btn-1 button,
+.btn-2 button,
+.btn-3 button,
+.btn-4 button {
+  width: 100px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background-color: var(--button-color);
+  border: none;
+}
+
+.btn-1 button a,
+.btn-2 button a,
+.btn-3 button a,
+.btn-4 button a {
+  color: white;
+}
+
+.btn-3 button,
+.btn-4 button {
+  width: 200px;
+}
+
+.hero {
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 50px;
+  padding: 15px 0;
+  padding-bottom: 20px;
+}
+
+.hero-1 div h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 70px;
+  color: var(--text-color);
+}
+
+.hero-1 div p {
+  text-align: center;
+  margin-top: 10px;
+  color: var(--secondary-color);
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.button-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.img {
+  height: 600px;
+  box-shadow: 0 0 50px 10px var(--image-shadow); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  margin: 50px auto;
+  border-radius: 50px;
+  position: relative;
+  z-index: 10;
+  background-image: url('Club\ Event\ Calendar.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.c-1,
+.c-2,
+.c-3 {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background-color: var(--button-color);
+  filter: blur(10rem);
+}
+
+.c-1 {
+  position: absolute;
+  bottom: 0;
+  left: 30;
+}
+
+.c-2 {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+}
+
+.c-3 {
+  position: absolute;
+  right: 0;
+  transform: translate(-30%);
+  bottom: 0;
+}
+
+#themeToggle{
+  background-color: transparent;
+  border: none;
+  
+}
+
+#themeToggle i{ 
+ color: var(--primary-color);
+ font-size: 20px;
+ margin-top: 2px;
+}
+
+.btn-5{
+  align-items: center;
+  justify-content: center;
+}
