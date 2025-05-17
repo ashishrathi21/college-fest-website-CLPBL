@@ -1,84 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NavBar</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="logo">
-          <h1>Quasars</h1>
-        </div>
 
-        <div class="nav-items">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Schedule</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NavBar</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-        <div class="button">
-          <div class="btn-1">
-            <button><a href="#">Login</a></button>
-          </div>
-          <div class="btn-2">
-            <button><a href="#">Sign Up</a></button>
-          </div>
-          <div class="btn-5">
-            <button onclick="toggleTheme()" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <main class="hero">
-      <div class="c-1"></div>
-      <div class="c-2"></div>
-      <div class="c-3"></div>
-
-      <div class="hero-1">
-        <div>
-          <h1>
-            WELCOME TO <span>QUASARS</span>
-            <br />
-            DIEMS
-          </h1>
-        </div>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut,
-            corrupti?<br />
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          </p>
-        </div>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h1>Quasars</h1>
       </div>
 
-      <div class="button-1">
-        <div class="btn-3">
-          <button><a href="#">Explore Events</a></button>
-        </div>
-        <div class="btn-4">
-          <button><a href="#">Register Yourself</a></button>
-        </div>
+      <div class="nav-items">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Schedule</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
       </div>
 
-      <div class="img">
-        <img src="" alt="" />
+      <div class="button">
+        <div class="btn-1">
+          <button><a href="#">Login</a></button>
+        </div>
+        <div class="btn-2">
+          <button><a href="#">Sign Up</a></button>
+        </div>
+        <div class="btn-5">
+          <button onclick="toggleTheme()" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        </div>
       </div>
-    </main>
+    </nav>
+  </header>
 
-    <script src="script.js"></script>
-  </body>
+  <main class="hero">
+    <div class="c-1"></div>
+    <div class="c-2"></div>
+    <div class="c-3"></div>
+
+    <div class="hero-1">
+      <div>
+        <h1>
+          WELCOME TO <span>QUASARS</span>
+          <br />
+          DIEMS
+        </h1>
+      </div>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut,
+          corrupti?<br />
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+
+    <div class="button-1">
+      <div class="btn-3">
+        <button><a href="#">Explore Events</a></button>
+      </div>
+      <div class="btn-4">
+        <button><a href="#">Register Yourself</a></button>
+      </div>
+    </div>
+
+    <div class="img">
+      <img src="" alt="" />
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>About Fest</h3>
+        <p>Our college fest is a celebration of talent, creativity, and community. Join us for a vibrant experience
+          filled with music, art, tech, and fun!</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: quasars@dietms.org</p>
+        <p>Phone: +91-9876543210</p>
+        <p>Location: DIEMS, Aurangabad</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Quasars@DIEMS. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
 </html>
