@@ -4,26 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="about.css">
+     <!-- Fonts & Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Roboto:wght@500&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
     <title>About Quasars</title>
 </head>
 <body>
+     <!-- ========== HEADER & NAVBAR ========== -->
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h1>About Quasars</h1>
-                <img src="logo.png" alt="Quasars Logo">
-            </div>
-            <div class="nav-items">
-                <ul>
-                    <li><a href="#index.html">Home</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Schedule</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </div>
-        </nav>
+      <nav class="navbar">
+        <div class="logo">
+          <h1>Quasars</h1>
+        </div>
+        <div class="nav-items">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a rel="about.html" href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="button">
+          <div class="btn-1"><button><a href="#">Login</a></button></div>
+          <div class="btn-2"><button><a href="#">Sign Up</a></button></div>
+          <div class="btn-5">
+            <button onclick="toggleTheme()" id="themeToggle">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
     </header>
-
     <main>
         <section>
             <h2>Who We Are?</h2>
@@ -70,15 +94,34 @@
             </p>
         </section>
     </main>
-
-    <footer>
-        <h2>Follow Us on Social Media</h2>
-        <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">WhatsApp</a></li>
-            <li><a href="#">LinkedIn</a></li>
-        </ul>
+ <!-- ========== FOOTER SECTION ========== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>About Fest</h3>
+          <p>
+            Our college fest is a celebration of talent, creativity, and community. Join us for a vibrant experience
+            filled with music, art, tech, and fun!
+          </p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Email: quasars@dietms.org</p>
+          <p>Phone: +91-9876543210</p>
+          <p>Location: DIEMS, Aurangabad</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Quasars@DIEMS. All rights reserved.</p>
+      </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
