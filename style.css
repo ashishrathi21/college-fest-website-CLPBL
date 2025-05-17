@@ -355,6 +355,7 @@ span{
 }
 
 .gallery-h1{
+    
   display: flex;
   align-items: center;
   justify-content: center;
@@ -363,7 +364,7 @@ span{
 .gallery-h1 h1{
  text-align: center;
 margin: 20px 0 0 0;
-font-size: 50px;
+font-size: 30px;
 font-weight: 900;
 }
 
