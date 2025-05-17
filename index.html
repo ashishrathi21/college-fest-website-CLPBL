@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NavBar</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,6 +82,27 @@
     <div class="img">
       <img src="" alt="" />
     </div>
+
+    <div id="container">
+      <h1>Gallery</h1>
+  <div id="slider-container">
+    <i onclick="slideLeft()" class="fa-solid fa-circle-chevron-left" id="slibtn-2"></i>
+      <div id="slider">
+        <div class="slide"><span><img src="colorful-animal-paw-print-pattern-vector-21797282.avif" alt=""></span></div>
+        <div class="slide"><span><img src="adorable-boston-terrier-art-square-vector-1543993.avif" alt=""></span></div>
+        <div class="slide"><span><img src="square-of-wild-animals-in-sunset-savanna-vector-41627509.webp" alt=""><span></div>
+        <div class="slide"><span><img src="colorful-cat-square-pattern-vector-18669824.avif" alt=""></span></div>
+        <div class="slide"><span><img src="colorful-animal-paw-print-pattern-vector-21797282.avif" alt=""></span></div>
+        <div class="slide"><span><img src="adorable-boston-terrier-art-square-vector-1543993.avif" alt=""></span></div>
+        <div class="slide"><span><img src="square-of-wild-animals-in-sunset-savanna-vector-41627509.webp" alt=""></span></div>
+        <div class="slide"><span><img src="colorful-cat-square-pattern-vector-18669824.avif" alt=""></span></div>
+        <div class="slide"><span><img src="colorful-animal-paw-print-pattern-vector-21797282.avif" alt=""></span></div>
+        <div class="slide"><span><img src="adorable-boston-terrier-art-square-vector-1543993.avif" alt=""></span></div>
+    </div>
+    <i onclick="slideLeft()" class="fa-solid fa-circle-chevron-right" id="slibtn-2"></i>
+  </div>
+</div>
+
   </main>
   <footer class="footer">
     <div class="footer-container">
@@ -107,6 +130,7 @@
     </div>
   </footer>
 
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 
