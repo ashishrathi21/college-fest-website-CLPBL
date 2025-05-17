@@ -409,9 +409,11 @@ font-weight: 900;
 
  }
   
+.contact-h1{
+  margin: 80px 20px 0 0;
+}
 
-
-  .event-h1{
+  .event-h1, .contact-h1{
   font-weight: 1000;
   font-size: 30px;
   text-align: center;
@@ -462,4 +464,84 @@ font-weight: 900;
   height: 100%;
   object-fit: cover; 
   border-radius: 50px;
+}
+
+
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 50px;
+  border-radius: 20px;
+  flex-wrap: wrap;
+}
+
+/* Left circular image */
+.contact-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-left img {
+  background-color: rgb(26, 30, 88);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 30px var(--image-shadow);
+}
+
+/* Right form styling */
+.contact-right {
+  flex: 1;
+  background: var(--bg-color);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px var(--image-shadow);
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-right label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.contact-right input,
+.contact-right textarea {
+  background-color: var(--bg-color);
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--button-color);
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact-right textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-right button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-right button:hover {
+  background-color: var(--hover-color)
 }
