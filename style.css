@@ -418,12 +418,11 @@ span {
 }
 
 .hiw-step {
-
-  background: var(--button-color);
+background: linear-gradient(to right, var(--button-color), var(--hover-color));
   border-radius: 20px;
   padding: 30px;
   width: 250px;
-    box-shadow: 0 4px 6px var(--image-shadow);
+  box-shadow: 0 4px 6px var(--bg-color);
   transition: transform 0.3s ease;
 }
 
@@ -447,6 +446,40 @@ span {
   color: var(--text-color);
   font-size: 1rem;
 }
+
+
+.ftline {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--bg-color); 
+  color: var(--text-color);
+}
+
+.ftline h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: var(--button-color);
+  font-weight: bold;
+}
+
+.emphasis {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.warn {
+  color: var(--secondary-color);
+  font-style: italic;
+}
+.ftline span:hover {
+  text-decoration: underline;
+  cursor: default;
+}
+
 
 /* ========================
    Footer
