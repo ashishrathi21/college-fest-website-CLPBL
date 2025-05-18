@@ -7,8 +7,14 @@
     <title>DIEMS | QUASARS</title>
 
     <!-- Fonts & Icons -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,16 +38,19 @@
         </div>
         <div class="nav-items">
           <ul>
-            <li><a href="index.html" id="nav-home">Home</a></li>
+            <li><a href="index.html" id="nav-home" class="active">Home</a></li>
             <li><a href="schedule.html" id="nav-schedule">Events</a></li>
             <li><a href="about.html" id="nav-about">About</a></li>
             <li><a href="contact.html" id="nav-contact">Contact</a></li>
-          
           </ul>
         </div>
         <div class="button">
-          <div class="btn-1"><button><a href="#" onclick="show('popup')">Login</a></button></div>
-          <div class="btn-2"><button><a href="#">Register</a></button></div>
+          <div class="btn-1">
+            <button><a href="#" onclick="show('popup')">Login</a></button>
+          </div>
+          <div class="btn-2">
+            <button><a href="#" onclick="show('popuk')">Register</a></button>
+          </div>
           <div class="btn-5">
             <button onclick="toggleTheme()" id="themeToggle">
               <i class="fa-solid fa-moon"></i>
@@ -63,139 +72,291 @@
           DIEMS
         </h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corrupti?<br />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut,
+          corrupti?<br />
           Lorem ipsum dolor sit, amet consectetur adipisicing elit.
         </p>
       </div>
 
       <div class="button-1">
-        <div class="btn-3"><button><a href="schedule.html">Explore Events</a></button></div>
-        <div class="btn-4"><button><a href="#">Register Yourself</a></button></div>
+        <div class="btn-3">
+          <button><a href="schedule.html">Explore Events</a></button>
+        </div>
+        <div class="btn-4">
+          <button><a href="#" onclick="show('popuk')">Register Yourself</a></button>
+        </div>
       </div>
 
       <!-- ========== PROMO VIDEO SECTION ========== -->
       <div class="img">
-        <video autoplay muted loop playsinline poster="assets/Club Event Calendar.png">
-          <source src="Untitled video - Made with Clipchamp.mp4" type="video/mp4" />
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/Club Event Calendar.png"
+        >
+          <source
+            src="Untitled video - Made with Clipchamp.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
 
-
       <!-- login popup -->
-        <div class="popup" id="popup">
-<div class="login-container">
-  <h1>Login</h1>
-  <form id="loginForm" action="index.html">
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input id="email" name="email" type="email" placeholder="Enter your email" required>
-    </div>
+      <div class="popup" id="popup">
+        <div class="login-container">
+          <h1>Login</h1>
+          <form id="loginForm" action="index.html">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
 
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input id="password" name="password" type="password" placeholder="Enter your password" required>
-    </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="loginType">Select Login Type:</label>
+              <select name="loginType" id="loginType" required>
+                <option value="" disabled selected>-- Select Login --</option>
+                <option value="student">Student Login</option>
+                <option value="admin">Admin Login</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
 
-    <div class="form-group">
-      <button type="submit">Submit</button>
-    </div>
-  </form>
-</div>
+        <a href="#" onclick="hide('popup')">Close</a>
+      </div>
 
-  <a href="#" onclick="hide('popup')">Close</a>
-</div>
+      <!-- register popup -->
+      <div class="popuk" id="popuk">
+        <div class="signup-container">
+          <h1>Sign Up</h1>
 
+          <form id="signUpForm" action="index.html">
+            <div class="form-group-1">
+              <div class="input-box">
+                <label for="firstName">First Name</label><br />
+                <input
+                  id="firstName"
+                  name="firstName"
+                  type="text"
+                  placeholder="Enter your First Name"
+                  required
+                />
+              </div>
 
-       <!-- ========== how it works SECTION ========== -->
+              <div class="input-box">
+                <label for="lastName">Last Name</label><br />
+                <input
+                  id="lastName"
+                  name="lastName"
+                  type="text"
+                  placeholder="Enter your Last Name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label><br />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your Email"
+                required
+              />
+            </div>
+
+            <div class="form-group-2">
+              <div class="input-box">
+                <label for="password">Password</label><br />
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="Enter your password"
+                  required
+                />
+              </div>
+
+              <div class="input-box">
+                <label for="confirmPassword">Confirm Password</label><br />
+                <input
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  type="password"
+                  placeholder="Confirm your password"
+                  required
+                />
+              </div>
+              
+            </div>
+            <div class="form-group">
+              <label for="loginType">Select Login Type:</label>
+              <select name="loginType" id="loginType" required>
+                <option value="" disabled selected>-- Select Login --</option>
+                <option value="student">Student Login</option>
+                <option value="admin">Admin Login</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+
+        <a href="#" onclick="hide('popuk')">Close</a>
+      </div>
+
+      <!-- ========== how it works SECTION ========== -->
       <section class="how-it-works">
-  <h2 class="hiw-heading">How It Works</h2>
-  <div class="hiw-steps">
-    <div class="hiw-step">
-      <i class="fas fa-user-plus hiw-icon"></i>
-      <h3>Step 1</h3>
-      <p>Login or Register</p>
-    </div>
-    <div class="hiw-step">
-      <i class="fas fa-calendar-alt hiw-icon"></i>
-      <h3>Step 2</h3>
-      <p>Browse Events</p>
-    </div>
-    <div class="hiw-step">
-      <i class="fas fa-edit hiw-icon"></i>
-      <h3>Step 3</h3>
-      <p>Register for Events</p>
-    </div>
-    <div class="hiw-step">
-      <i class="fas fa-bell hiw-icon"></i>
-      <h3>Step 4</h3>
-      <p>Get Updates & Reminders</p>
-    </div>
-  </div>
-</section>
-     
+        <h2 class="hiw-heading">How It Works</h2>
+        <div class="hiw-steps">
+          <div class="hiw-step">
+            <i class="fas fa-user-plus hiw-icon"></i>
+            <h3>Step 1</h3>
+            <p>Login or Register</p>
+          </div>
+          <div class="hiw-step">
+            <i class="fas fa-calendar-alt hiw-icon"></i>
+            <h3>Step 2</h3>
+            <p>Browse Events</p>
+          </div>
+          <div class="hiw-step">
+            <i class="fas fa-edit hiw-icon"></i>
+            <h3>Step 3</h3>
+            <p>Register for Events</p>
+          </div>
+          <div class="hiw-step">
+            <i class="fas fa-bell hiw-icon"></i>
+            <h3>Step 4</h3>
+            <p>Get Updates & Reminders</p>
+          </div>
+        </div>
+      </section>
 
       <!-- ========== UPCOMING EVENTS SECTION ========== -->
       <section class="events-section">
         <h1 class="event-h1">Upcoming Events</h1>
         <div class="events">
           <div class="event-card">
-            <img src="scheduleImages/event3.jpg" >
-            <h3>Short Film </h3>
+            <img src="scheduleImages/event3.jpg" />
+            <h3>Short Film</h3>
             <p>Date: March 20, 2025</p>
             <p>Time: 4:00 PM</p>
             <button class="register-btn">Register</button>
           </div>
           <div class="event-card">
-            <img src="scheduleImages/event4.jpg" >
+            <img src="scheduleImages/event4.jpg" />
             <h3>Photography</h3>
             <p>Date: March 22, 2025</p>
             <p>Time: 2:00 PM</p>
             <button class="register-btn">Register</button>
           </div>
           <div class="event-card">
-            <img src="scheduleImages/event5.jpg" >
+            <img src="scheduleImages/event5.jpg" />
             <h3>Antakshari</h3>
             <p>Date: March 25, 2025</p>
             <p>Time: 10:00 AM</p>
             <button class="register-btn">Register</button>
           </div>
         </div>
-        <h2 class="event-h2"><a href="#">Explore more events <i class="fa-solid fa-arrow-right-long"></i></a></h2>
+        <h2 class="event-h2">
+          <a href="schedule.html"
+            >Explore more events <i class="fa-solid fa-arrow-right-long"></i
+          ></a>
+        </h2>
       </section>
 
-       <!-- ========== GALLERY SECTION ========== -->
-       <div class="gsection">
-      <div class="gallery-h1">
-        <h1>Glimpses of the Celebration</h1>
-      </div>
-      
-
-      <div class="slider">
-        <button id="prev" class="slider-btn"><i class="fa-solid fa-circle-chevron-left"></i></button>
-        <div class="card-content">
-          <!-- Image cards -->
-          <div class="card"><div class="card-img"><img src="assets/download (1).png" alt="" /></div></div>
-          <div class="card"><div class="card-img"><img src="assets/download.png" alt="" /></div></div>
-          <div class="card"><div class="card-img"><img src="assets/hq720.png" alt="" /></div></div>
-          <div class="card"><div class="card-img"><img src="assets/images-1.png" alt="" /></div></div>
-          <div class="card"><div class="card-img"><img src="assets/images.png" alt="" /></div></div>
-          <div class="card"><div class="card-img"><img src="assets/hq720.png" alt="" /></div></div>
-          <div class="card"><div class="card-img"><img src="assets/download.png" alt="" /></div></div>
-          <div class="card"><div class="card-img"><img src="assets/download (1).png" alt="" /></div></div>
-          <div class="card"><div class="card-img"><img src="assets/images-1.png" alt="" /></div></div>
-          <div class="card"><div class="card-img"><img src="assets/images.png" alt="" /></div></div>
+      <!-- ========== GALLERY SECTION ========== -->
+      <div class="gsection">
+        <div class="gallery-h1">
+          <h1>Glimpses of the Celebration</h1>
         </div>
-        <button id="next" class="slider-btn"><i class="fa-solid fa-circle-chevron-right"></i></button>
+
+        <div class="slider">
+          <button id="prev" class="slider-btn">
+            <i class="fa-solid fa-circle-chevron-left"></i>
+          </button>
+          <div class="card-content">
+            <!-- Image cards -->
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/download (1).png" alt="" />
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/download.png" alt="" />
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-img"><img src="assets/hq720.png" alt="" /></div>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/images-1.png" alt="" />
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-img"><img src="assets/images.png" alt="" /></div>
+            </div>
+            <div class="card">
+              <div class="card-img"><img src="assets/hq720.png" alt="" /></div>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/download.png" alt="" />
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/download (1).png" alt="" />
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/images-1.png" alt="" />
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-img"><img src="assets/images.png" alt="" /></div>
+            </div>
+          </div>
+          <button id="next" class="slider-btn">
+            <i class="fa-solid fa-circle-chevron-right"></i>
+          </button>
+        </div>
       </div>
-     </div>
 
-    <div class="ftline">
-  <h1>
-    <span class="highlight">Stay ahead, stay informed</span><br>
-    because every event deserves your <span class="emphasis">presence</span>, not your <span class="warn">confusion</span>
-  </h1>
-</div>
-
+      <div class="ftline">
+        <h1>
+          <span class="highlight">Stay ahead, stay informed</span><br />
+          because every event deserves your
+          <span class="emphasis">presence</span>, not your
+          <span class="warn">confusion</span>
+        </h1>
+      </div>
     </main>
 
     <!-- ========== FOOTER SECTION ========== -->
@@ -204,8 +365,9 @@
         <div class="footer-about">
           <h3>About Fest</h3>
           <p>
-            Our college fest is a celebration of talent, creativity, and community. Join us for a vibrant experience
-            filled with music, art, tech, and fun!
+            Our college fest is a celebration of talent, creativity, and
+            community. Join us for a vibrant experience filled with music, art,
+            tech, and fun!
           </p>
         </div>
         <div class="footer-links">

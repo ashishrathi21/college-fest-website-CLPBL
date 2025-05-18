@@ -44,7 +44,7 @@
 
 .contact-right label {
   margin-top: 15px;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .contact-right input,
@@ -69,8 +69,8 @@
   padding: 12px;
   border: none;
   background-color: var(--button-color);
-  color: var(--text-color);
-  font-weight: bold;
+  color: var(--bg-color);
+  font-weight: 500;
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease;
