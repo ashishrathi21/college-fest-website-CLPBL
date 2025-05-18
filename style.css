@@ -241,7 +241,7 @@ span {
 .gallery-h1 {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .gallery-h1 h1 {
@@ -250,7 +250,12 @@ span {
   text-align: center;
 }
 
+.gsection{
+    margin-top: 100px;
+}
+
 .slider {
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -345,16 +350,26 @@ span {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  
   height: 250px;
+  justify-content: center; 
+  align-items: center; 
 }
-
+.event-card img{
+  height: 100px; 
+  width: 100px;
+  border-radius: 50px;
+  object-fit: fill;
+  border: 2px solid var(--button-color);
+  margin-bottom: 10px;
+}
 .event-card h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
 .register-btn {
+  margin-top: 15px;
   padding: 8px 16px;
   background-color: var(--button-color);
   color: var(--text-color);
@@ -381,82 +396,56 @@ span {
   border-radius: 50px;
 }
 
-/* ========================
-   Contact Section
-=========================== */
-.contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  padding: 50px;
-  flex-wrap: wrap;
-  border-radius: 20px;
-}
+/* how it works   */
 
-.contact-left {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.contact-left img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  background-color: rgb(26, 30, 88);
-  box-shadow: 0 0 30px var(--image-shadow);
-}
-
-.contact-right {
-  flex: 1;
+.how-it-works {
+  text-align: center;
+  padding: 60px 20px;
   background: var(--bg-color);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px var(--image-shadow);
 }
 
-.contact-right form {
+.hiw-heading {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--primary-color);
+}
+
+.hiw-steps {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-.contact-right label {
-  margin-top: 15px;
-  font-weight: bold;
+.hiw-step {
+
+  background: var(--button-color);
+  border-radius: 20px;
+  padding: 30px;
+  width: 250px;
+    box-shadow: 0 4px 6px var(--image-shadow);
+  transition: transform 0.3s ease;
 }
 
-.contact-right input,
-.contact-right textarea {
-  margin-top: 5px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid var(--button-color);
-  font-size: 1rem;
-  background-color: var(--bg-color);
-  outline: none;
+.hiw-step:hover {
+  transform: translateY(-10px);
 }
 
-.contact-right textarea {
-  resize: vertical;
-  min-height: 100px;
+.hiw-icon {
+  font-size: 40px;
+  color: var(--bg-color);
+  margin-bottom: 15px;
 }
 
-.contact-right button {
-  margin-top: 20px;
-  padding: 12px;
-  border: none;
-  background-color: var(--button-color);
+.hiw-step h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.hiw-step p {
   color: var(--text-color);
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contact-right button:hover {
-  background-color: var(--hover-color);
+  font-size: 1rem;
 }
 
 /* ========================
