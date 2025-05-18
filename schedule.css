@@ -1,0 +1,103 @@
+/* ========================
+   Root Variables & Theme
+=========================== */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #0c1830;
+  --primary-color: #1b305a;
+  --secondary-color: rgb(6, 106, 123);
+  --button-color: rgb(0, 166, 255);
+  --hover-color: rgb(8, 181, 211);
+  --nav-shadow: #0c1830;
+  --image-shadow: rgb(8, 181, 211);
+}
+
+.dark-mode {
+  --bg-color: #0c1830;
+  --text-color: #ffffff;
+  --primary-color: #ffffff;
+  --secondary-color: rgb(133, 213, 229);
+  --button-color: rgb(0, 166, 255);
+  --hover-color: rgb(0, 200, 255);
+  --nav-shadow: #ffffff;
+  --image-shadow: rgb(8, 181, 211);
+  background-color: var(--bg-color);
+}
+
+.schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.schedule h1 {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.schedule p {
+  text-align: center;
+}
+
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 2rem; /* Row + column gap */
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto; /* This centers the grid horizontally */
+}
+
+/* Event Card */
+.event-card {
+  border: 1px solid var(--button-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px var(--image-shadow);
+  text-align: center;
+  background-color: var(--bg-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  min-height: 350px;
+  overflow: hidden;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px var(--button-color);
+}
+
+.event-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-bottom: 0.6rem;
+
+}
+
+.event-card h4 {
+  margin: 0.3rem 0 0.4rem;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  word-wrap: break-word;
+}
+
+.event-card p {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
