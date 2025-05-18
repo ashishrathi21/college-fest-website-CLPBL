@@ -396,6 +396,113 @@ span {
   border-radius: 50px;
 }
 
+/* login popup */
+.popup {
+  display: none;
+  position: fixed;
+  padding: 20px;
+  min-width: 600px;
+  left: 50%;
+ text-align: center;
+  height: auto;
+  top: 50%;
+  justify-content: space-around;
+  transform: translate(-50%,-50%);
+ background: var(--bg-color);
+  border: 3px solid var(--button-color);
+  z-index: 20;
+}
+
+#popup:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: -2;
+}
+
+#popup:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--bg-color);
+  z-index: -1;
+}
+.popup a{
+  text-align: center;
+}
+/* Container */
+.login-container {
+  min-width: 600px;
+  margin:10px auto;
+  background: #ffffff;
+  padding: 30px 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Heading */
+.login-container h1 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Labels */
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Input fields */
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Submit button */
+.form-group button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-group button:hover {
+  background-color: #357ABD;
+}
+
+
 /* how it works   */
 
 .how-it-works {
