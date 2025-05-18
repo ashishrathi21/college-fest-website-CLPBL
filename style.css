@@ -409,7 +409,7 @@ span {
   justify-content: space-around;
   transform: translate(-50%,-50%);
  background: var(--bg-color);
-  border: 3px solid var(--button-color);
+ border-radius: 20px;
   z-index: 20;
 }
 
@@ -421,6 +421,7 @@ span {
   bottom: 0;
   right: 0;
   background: rgba(0,0,0,0.5);
+  border-radius: 20px;
   z-index: -2;
 }
 
@@ -431,7 +432,8 @@ span {
   left: 0;
   bottom: 0;
   right: 0;
-  background: var(--bg-color);
+  background: var(--button-color);
+  border-radius: 20px;
   z-index: -1;
 }
 .popup a{
@@ -446,13 +448,12 @@ span {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   text-align: center;
-  font-family: 'Segoe UI', sans-serif;
 }
 
 /* Heading */
 .login-container h1 {
   margin-bottom: 25px;
-  color: #333;
+  color: rgb(4, 27, 54)
 }
 
 /* Form groups */
@@ -466,21 +467,21 @@ span {
   display: block;
   margin-bottom: 6px;
   font-weight: 600;
-  color: #444;
+  color: var(--text-color);
 }
 
 /* Input fields */
 .form-group input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--bg-color);
   border-radius: 8px;
   font-size: 16px;
   transition: border-color 0.3s;
 }
 
 .form-group input:focus {
-  border-color: #4a90e2;
+  border-color: var(--button-color);
   outline: none;
 }
 
@@ -488,7 +489,7 @@ span {
 .form-group button {
   width: 100%;
   padding: 12px;
-  background-color: #4a90e2;
+  background-color: var(--button-color);
   color: white;
   border: none;
   border-radius: 8px;
@@ -499,7 +500,7 @@ span {
 }
 
 .form-group button:hover {
-  background-color: #357ABD;
+  background-color: var(--hover-color);
 }
 
 
