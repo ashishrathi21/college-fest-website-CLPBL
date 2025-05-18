@@ -67,7 +67,9 @@ h1 {
   position: relative;
   z-index: 10;
 }
-
+.Q{
+  color: var(--button-color);
+}
 span {
   color: var(--hover-color);
 }
