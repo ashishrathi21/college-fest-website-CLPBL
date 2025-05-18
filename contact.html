@@ -25,7 +25,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       crossorigin="anonymous"
     />
-
+<link rel="stylesheet" href="contact.css">
     <title>About Quasars</title>
   </head>
   <body>
@@ -58,54 +58,32 @@
         </div>
       </nav>
     </header>
-    <main>
-      <div class="about">
-        <h1>About Quasars</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing eli <br />
-          Voluptatibus illo omnis nesciunt et voluptates accusamus non
-          reprehenderit quia praesentium expedita!
-        </p>
-      </div>
+    <!-- ========== CONTACT SECTION ========== -->
+      <section class="contact-section">
+        <h1 class="contact-h1">Contact Us</h1>
+        <div class="contact">
+          <!-- Left: Image -->
+          <div class="contact-left">
+            <img src="logo.png" alt="Contact Image" />
+          </div>
 
-      <div class="about-main">
-        <div class="about-img">
-          <video autoplay muted loop playsinline poster="assets/about-poster.png"> 
-            <source src="aboutQuasar.mp4" type="video/mp4" />
-          </video>
-        </div>
+          <!-- Right: Form -->
+          <div class="contact-right">
+            <form>
+              <label for="name">Name:</label>
+              <input type="text" id="name" placeholder="Name" required />
 
-        <div class="about-text">
-          <h2>QUASARS 2025</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-            perferendis cupiditate, esse nisi maiores quisquam optio ipsum
-            adipisci ullam nesciunt dolorem error quod, architecto fugiat
-            repellat. Repellendus voluptates distinctio alias molestiae. Dolore
-            similique voluptas exercitationem a repellendus? Repellat commodi
-            iste dolorum quidem provident aliquam, magnam explicabo impedit
-            pariatur odio sint! Nisi, illo! Aliquid, magni assumenda delectus
-            fugiat at facere saepe ut iure a dolores suscipit atque iste totam
-            reiciendis optio soluta dignissimos dolorum, natus distinctio
-            provident, itaque repellat! Repellat impedit debitis alias sed
-            accusantium dolores veritatis eum aperiam, dignissimos quos
-            voluptate maxime cum voluptas expedita, id rem. Repellendus, tempore
-            voluptate.
-          </p>
-        </div>
-      </div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" placeholder="Email" required />
 
-        <div class="coev">
-          <h1>Quasar Event Co-Ordinaters</h1>
-          <div class="event-coordinator">
-            <div class="co-1"></div>
-            <div class="co-1"></div>
-            <div class="co-1"></div>
-            <div class="co-1"></div>
+              <label for="message">Message:</label>
+              <textarea id="message" placeholder="Your message..."></textarea>
+
+              <button type="submit">Submit</button>
+            </form>
           </div>
         </div>
-      
-    </main>
+      </section>
     <!-- ========== FOOTER SECTION ========== -->
     <footer class="footer">
       <div class="footer-container">
