@@ -52,6 +52,13 @@ a:hover {
   color: var(--hover-color);
 }
 
+a .active {
+  color: var(--button-color) ;/* orange, change as per your design */
+  font-weight: bold;
+  border-bottom: 2px solid var(--button-color);
+}
+
+
 h1 {
   font-size: 35px;
   font-weight: 1000;

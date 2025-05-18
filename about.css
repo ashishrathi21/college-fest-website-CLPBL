@@ -1,20 +1,98 @@
-
-/* Main content */
-main {
-    padding: 2rem;
+/* ========================
+   Root Variables & Theme
+=========================== */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #0c1830;
+  --primary-color: #1b305a;
+  --secondary-color: rgb(6, 106, 123);
+  --button-color: rgb(0, 166, 255);
+  --hover-color: rgb(8, 181, 211);
+  --nav-shadow: #0c1830;
+  --image-shadow: rgb(8, 181, 211);
 }
 
-main section {
-    margin-bottom: 3rem;
+.dark-mode {
+  --bg-color: #0c1830;
+  --text-color: #ffffff;
+  --primary-color: #ffffff;
+  --secondary-color: rgb(133, 213, 229);
+  --button-color: rgb(0, 166, 255);
+  --hover-color: rgb(0, 200, 255);
+  --nav-shadow: #ffffff;
+  --image-shadow: rgb(8, 181, 211);
+  background-color: var(--bg-color);
 }
 
-main img {
-    max-width: 100%;
-    height: auto;
-    margin: 1rem 0;
+.about{
+
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
 }
 
-ul {
-    margin-top: 1rem;
-    padding-left: 1.5rem;
+.about h1{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.about p{
+    text-align: center;
+}
+
+.about-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 0 200px;
+}
+
+.about-img video {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--image-shadow);
+}
+
+.about-text {
+  max-width: 500px;
+  font-size: 1.1rem;
+  color: var(--text-color)
+}
+
+.about-text h2{
+  padding: 10px 0;
+  color: var(--image-shadow)
+}
+
+.about-text p{
+  text-align: start;
+  text-justify: auto;
+  color: var(--text-color)
+}
+.coev h1{
+    text-align: center;
+    padding: 20px 0;
+}
+.event-coordinator{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 15px 50px;
+    padding-top: 15px 0;
+}
+
+.co-1{
+    height: 200px;
+    width: 200px;
+    border: 2px solid var(--button-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--image-shadow);
+    margin-bottom: 20px;
+    background-image: url(assets/images.jpg);
+    background-size: cover;       /* pura area cover kare */
+  background-position: center;  /* center se align ho */
+  background-repeat: no-repeat; 
 }
