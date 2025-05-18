@@ -98,6 +98,12 @@ span {
   font-weight: 400;
 }
 
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
 .button {
   display: flex;
   align-items: center;
@@ -638,8 +644,9 @@ span {
 }
 
 .hiw-step {
-background: linear-gradient(to right, var(--button-color), var(--hover-color));
-  border-radius: 20px;
+border: 2px solid var(--button-color);
+background: var(--bg-color);
+  border-radius: 50px;
   padding: 30px;
   width: 250px;
   box-shadow: 0 4px 6px var(--bg-color);
@@ -652,8 +659,13 @@ background: linear-gradient(to right, var(--button-color), var(--hover-color));
 
 .hiw-icon {
   font-size: 40px;
-  color: var(--bg-color);
   margin-bottom: 15px;
+  background: linear-gradient(90deg, var(--button-color), var(--hover-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* For Firefox */
+  background-clip: text;
+  color: transparent;
 }
 
 .hiw-step h3 {
@@ -772,3 +784,28 @@ background: linear-gradient(to right, var(--button-color), var(--hover-color));
   font-size: 13px;
   color: var(--secondary-color);
 }
+
+
+
+
+/* @media (max-width: 768px) {
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    background-color: #1e3a8a;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .nav-items.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+} */
