@@ -34,6 +34,16 @@
 .about h1{
     text-align: center;
     padding: 20px 0;
+    background: linear-gradient(
+    270deg,
+    var(--button-color) 30%,
+    var(--primary-color) 70%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .about p{
@@ -64,7 +74,16 @@
 
 .about-text h2{
   padding: 10px 0;
-  color: var(--image-shadow)
+background: linear-gradient(
+    270deg,
+    var(--button-color) 30%,
+    var(--primary-color) 70%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .about-text p{
@@ -75,6 +94,16 @@
 .coev h1{
     text-align: center;
     padding: 20px 0;
+    background: linear-gradient(
+    270deg,
+    var(--button-color) 30%,
+    var(--primary-color) 70%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 .event-coordinator{
     display: flex;

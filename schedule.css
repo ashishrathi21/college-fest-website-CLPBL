@@ -35,6 +35,16 @@
 .schedule h1 {
   text-align: center;
   padding: 20px 0;
+  background: linear-gradient(
+    270deg,
+    var(--button-color) 30%,
+    var(--primary-color) 70%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .schedule p {
