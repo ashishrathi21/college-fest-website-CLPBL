@@ -588,6 +588,7 @@ span {
   margin-bottom: 20px;
 }
 
+
 .input-box {
   flex: 1;
 }
@@ -779,14 +780,33 @@ background: var(--bg-color);
 }
 
 .footer-bottom {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start; /* Aligns with the top section */
   border-top: 1px solid #374151;
   margin-top: 30px;
   padding-top: 15px;
   font-size: 13px;
   color: var(--secondary-color);
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
+.footer-left {
+  text-align: start;
+  flex: 1 1 250px;
+}
+
+.footer-contact-dev {
+  text-align: end;
+  flex: 1 1 250px;
+}
+
+.footer-txt {
+  color: var(--primary-color);
+  font-weight: 500;
+}
 
 
 
