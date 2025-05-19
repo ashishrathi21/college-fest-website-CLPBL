@@ -19,11 +19,11 @@
 .contact-left img {
   width: 250px;
   height: 250px;
-  border-radius: 50%;
+  border-radius: 15px;
   object-fit: cover;
   background-color: rgb(26, 30, 88);
   box-shadow: 0 0 30px var(--image-shadow);
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .contact-right {
@@ -32,7 +32,7 @@
   flex: 1;
   background: var(--bg-color);
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 0 0 30px var(--image-shadow);
   margin: 50px 0;
 }
