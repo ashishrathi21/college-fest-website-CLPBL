@@ -778,7 +778,9 @@ background: var(--bg-color);
 .footer-links li {
   margin-bottom: 10px;
 }
-
+.social{
+  color: rgb(211, 33, 107);
+}
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
