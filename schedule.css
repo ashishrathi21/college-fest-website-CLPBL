@@ -53,26 +53,26 @@
 }
 
 
-.event-card {
+.event-cards {
   background: var(--bg-color);
   border: 2px solid var(--hover-color);
-  padding: 50px;
+  padding: 20px;
   width: 350px;
   border-radius: 15px;
   box-shadow: 0 4px 8px var(--image-shadow);
-  color: var(--secondary-color);
+  color: var(--text-color);
   text-align: center;
   display: flex;
   flex-direction: column;
   
-  min-height: 350px;
+  min-height: 300px;
   justify-content: center; 
   align-items: center; 
 }
-.event-card img{
-  min-height: 120px; 
-  min-width: 120px;
-  border-radius: 15px;
+.event-cards img{
+  height: 150px; 
+  width: 150px;
+  border-radius: 10px;
   object-fit: fill;
   border: 2px solid var(--button-color);
   margin-bottom: 10px;

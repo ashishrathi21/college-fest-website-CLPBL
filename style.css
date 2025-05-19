@@ -354,30 +354,31 @@ span {
   flex-wrap: wrap;
 }
 
-.event-card {
+.event-cards {
   background: var(--bg-color);
   border: 2px solid var(--hover-color);
-  padding: 50px;
+  padding: 20px;
   width: 350px;
   border-radius: 15px;
   box-shadow: 0 4px 8px var(--image-shadow);
-  color: var(--secondary-color);
+  color: var(--text-color);
   text-align: center;
   display: flex;
   flex-direction: column;
   
-  height: 250px;
+  min-height: 300px;
   justify-content: center; 
   align-items: center; 
 }
-.event-card img{
-  height: 100px; 
-  width: 100px;
-  border-radius: 50px;
+.event-cards img{
+  height: 150px; 
+  width: 150px;
+  border-radius: 10px;
   object-fit: fill;
   border: 2px solid var(--button-color);
   margin-bottom: 10px;
 }
+
 .event-card h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
@@ -389,9 +390,10 @@ span {
   background-color: var(--button-color);
   color: var(--text-color);
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 150px;
 }
 
 .register-btn:hover {
