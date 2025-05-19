@@ -256,11 +256,11 @@ span {
 .gallery-h1 {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .gallery-h1 h1 {
-  font-size: 30px;
+  font-size:2.5rem;
   font-weight: 900;
   text-align: center;
 }
@@ -295,7 +295,7 @@ span {
 .card {
   flex: 0 0 auto;
   width: 250px;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
 }
 
@@ -308,7 +308,8 @@ span {
 
 .card img {
   height: 200px;
-  border-radius: 15px;
+  object-fit: cover;
+  border-radius: 20px;
   box-shadow: 1px 1px 8px var(--image-shadow);
 }
 
@@ -319,7 +320,7 @@ span {
 .slider-btn {
   width: 60px;
   height: 60px;
-  border-radius: 15px;
+  border-radius: 20px;
   background: var(--bg-color);
   border: none;
   cursor: pointer;
@@ -341,9 +342,9 @@ span {
 .contact-h1 {
   text-align: center;
   font-weight: 1000;
-  font-size: 30px;
+  font-size:2.5rem;
   color: var(--primary-color);
-  margin-top: 80px;
+  margin-top: 30px;
 }
 
 .events {
@@ -699,7 +700,7 @@ background: var(--bg-color);
 }
 
 .ftline h1 {
-  font-size: 1.8rem;
+  font-size: 2.3rem;
   font-weight: 600;
   line-height: 1.6;
 }
@@ -707,11 +708,13 @@ background: var(--bg-color);
 .highlight {
   color: var(--button-color);
   font-weight: bold;
+  font-style: italic;
 }
 
 .emphasis {
   color: var(--button-color);
   font-weight: 600;
+  font-style: italic;
 }
 
 .warn {
