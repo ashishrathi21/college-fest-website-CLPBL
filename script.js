@@ -33,12 +33,8 @@ window.onload = function () {
     icon.classList.remove("fa-sun");
     icon.classList.add("fa-moon");
   }
-}
 
-
- window.onload = function () {
-    // Get current page filename
-    const currentPage = window.location.pathname.split("/").pop();
+  const currentPage = window.location.pathname.split("/").pop();
 
     // Set active class
     if (currentPage === "index.html" || currentPage === "") {
@@ -46,7 +42,8 @@ window.onload = function () {
     } else if (currentPage === "about.html") {
       document.getElementById("nav-about").classList.add("active");
     }
-  };
+}
+
 
 
 const next = document.querySelector('#next');
