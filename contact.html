@@ -50,10 +50,10 @@
           </div>
           <div class="button">
             <div class="btn-1">
-              <button><a href="#" onclick="show('popup')">Login</a></button>
+              <button><a href="login.html">Login</a></button>
             </div>
             <div class="btn-2">
-              <button><a href="#" onclick="show('popuk')">Register</a></button>
+              <button><a href="login.html">Register</a></button>
             </div>
             <div class="btn-5">
               <button onclick="toggleTheme()" id="themeToggle">
@@ -89,130 +89,6 @@
             </form>
           </div>
         </div>
-
-        <!-- login popup -->
-      <div class="popup" id="popup">
-        <div class="login-container">
-          <h1>Login</h1>
-          <form id="loginForm" action="index.html">
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="password">Password:</label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                placeholder="Enter your password"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="loginType">Select Login Type:</label>
-              <select name="loginType" id="loginType" required>
-                <option value="" disabled selected>-- Select Login --</option>
-                <option value="student">Student Login</option>
-                <option value="admin">Admin Login</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <button type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
-
-        <a href="#" onclick="hide('popup')">Close</a>
-      </div>
-
-      <!-- register popup -->
-      <div class="popuk" id="popuk">
-        <div class="signup-container">
-          <h1>Sign Up</h1>
-
-          <form id="signUpForm" action="index.html">
-            <div class="form-group-1">
-              <div class="input-box">
-                <label for="firstName">First Name</label><br />
-                <input
-                  id="firstName"
-                  name="firstName"
-                  type="text"
-                  placeholder="Enter your First Name"
-                  required
-                />
-              </div>
-
-              <div class="input-box">
-                <label for="lastName">Last Name</label><br />
-                <input
-                  id="lastName"
-                  name="lastName"
-                  type="text"
-                  placeholder="Enter your Last Name"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email</label><br />
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Enter your Email"
-                required
-              />
-            </div>
-
-            <div class="form-group-2">
-              <div class="input-box">
-                <label for="password">Password</label><br />
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  placeholder="Enter your password"
-                  required
-                />
-              </div>
-
-              <div class="input-box">
-                <label for="confirmPassword">Confirm Password</label><br />
-                <input
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  type="password"
-                  placeholder="Confirm your password"
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="loginType">Select Login Type:</label>
-              <select name="loginType" id="loginType" required>
-                <option value="" disabled selected>-- Select Login --</option>
-                <option value="student">Student Login</option>
-                <option value="admin">Admin Login</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <button type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
-
-        <a href="#" onclick="hide('popuk')">Close</a>
-      </div>
       </section>
 
     

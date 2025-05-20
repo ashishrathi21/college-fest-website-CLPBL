@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIEMS | Quasars Notifications</title>
+
+  <!-- Icons and Fonts -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="student.css" />
+  <link rel="stylesheet" href="notification.css">
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Roboto:wght@500&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">
+        <h2><span class="Q">Q</span>uasars</h2>
+      </div>
+      <div class="user-profile">
+        <img src="https://picsum.photos/40/40" alt="User Profile" class="avatar" />
+        <div class="user-info">
+          <h4>Student Dash</h4>
+          <p>student@1234</p>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="studentDash.html"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="eventdashboard.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+        <li><a href="myregistration.html"><i class="fa-solid fa-address-card"></i>My registrations</a></li>
+        <li class="active"><a href="notification.html"><i class="fa-solid fa-bell"></i>Notifications</a></li>
+      </ul>
+      <div class="logout-icon">
+        <button class="logout-icon-1">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <div class="log-out"><p>Log Out</p></div>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+      <div class="top-bar">
+        <div class="heading-container">
+          <h1>Notifications</h1>
+        </div>
+      </div>
+
+      <!-- Notifications List -->
+      <div class="notifications">
+        <h2>Recent Notifications</h2>
+
+        <div class="notification-item">
+          <div class="icon">✅</div>
+          <div class="text">
+            <p><strong>Registration Confirmed:</strong> Your registration for Short Film Competition has been confirmed. Please check your email for more details.</p>
+            <span class="time">2 hours ago</span>
+          </div>
+        </div>
+
+        <div class="notification-item">
+          <div class="icon">ℹ️</div>
+          <div class="text">
+            <p><strong>New Event Added:</strong> A new event "Coding Challenge" has been added. Registration opens on March 15, 2025.</p>
+            <span class="time">1 day ago</span>
+          </div>
+        </div>
+
+        <div class="notification-item">
+          <div class="icon">⚠️</div>
+          <div class="text">
+            <p><strong>Venue Change:</strong> The venue for Photography Contest has been changed to Campus Grounds from Studio Room.</p>
+            <span class="time">2 days ago</span>
+          </div>
+        </div>
+
+        <div class="notification-item">
+          <div class="icon">🔔</div>
+          <div class="text">
+            <p><strong>Payment Reminder:</strong> Please complete your payment for Antakshari to confirm your registration.</p>
+            <span class="time">3 days ago</span>
+          </div>
+        </div>
+
+        <div class="notification-item">
+          <div class="icon">🕒</div>
+          <div class="text">
+            <p><strong>Registration Pending:</strong> Your Photography Contest registration is pending approval. We'll notify you once confirmed.</p>
+            <span class="time">5 days ago</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming Events -->
+      <div class="event-reminders">
+        <h2>Upcoming Event Reminders</h2>
+
+        <div class="event">
+          
+          <div class="icon-txt">
+            <div class="icon">📅</div>
+            <div>
+            <strong>Short Film Competition</strong><br />
+            <small>March 20, 2025 at 4:00 PM</small>
+            </div>
+          </div>
+          <span class="days">In 3 days</span>
+        </div>
+
+        <div class="event">
+          
+          <div class="icon-txt">
+            <div class="icon">📅</div>
+            <div>
+            <strong>Photography Contest</strong><br />
+            <small>March 22, 2025 at 2:00 PM</small>
+            </div>
+          </div>
+          <span class="days">In 5 days</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

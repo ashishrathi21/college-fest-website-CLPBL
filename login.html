@@ -2,32 +2,176 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Form</title>
-  <script src="login.js" defer></script>
+  <title>Login | Quasars</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #f2f4f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 500px;
+    }
+
+    .login-container h1 {
+      color: #007bff;
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .login-container p {
+      color: #888;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .account-type {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      gap: 20px;
+     
+    }
+
+    .account-type button {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+       border-radius: 7px;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .account-type button.active {
+      background-color: #0099ff;
+      color: #fff;
+      border: none;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .form-group input::placeholder {
+      color: #999;
+    }
+
+    .form-group .hint {
+      font-size: 12px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 12px;
+      background-color: #0099ff;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .demo-text {
+      font-size: 13px;
+      text-align: center;
+      color: #666;
+      margin-top: 15px;
+    }
+  </style>
 </head>
 <body>
+  <div class="login-container">
+    <h1><strong>Quasars</strong></h1>
+    <p>Sign in to access your dashboard</p>
 
-  <main>
-    <h1>Login</h1>
-    <form id="loginForm" action="index.html">
-      <div>
-        <label for="email">Email:</label><br>
-        <input id="email" name="email" type="email" placeholder="Enter your email" required>
+    <div class="account-type">
+      <button id="studentBtn" class="active" onclick="selectAccount('student')">Student</button>
+      <button id="adminBtn" onclick="selectAccount('admin')">Admin</button>
+    </div>
+
+    <form id="loginForm" action="student_dashboard/studentDash.html">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="student@example.com"
+          required
+        />
       </div>
-      <br>
-      <div>
-        <label for="password">Password:</label><br>
-        <input id="password" name="password" type="password" placeholder="Enter your password" required>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Enter your password (try 'password')"
+          required
+        />
+        <div class="hint">Hint: use "password" for the demo</div>
       </div>
-      <br>
-      <div>
-        <button type="submit">Submit</button>
+
+      <div class="form-group">
+        <button type="submit">Sign In</button>
       </div>
     </form>
 
-    <p id="message"></p>
-  </main>
+    <div class="demo-text">
+      For demo: Student login (student@example.com) or Admin login (admin@example.com)
+    </div>
+  </div>
 
+  <script>
+    function selectAccount(type) {
+      const studentBtn = document.getElementById('studentBtn');
+      const adminBtn = document.getElementById('adminBtn');
+
+      if (type === 'student') {
+        studentBtn.classList.add('active');
+        adminBtn.classList.remove('active');
+        document.getElementById('email').value = 'student@example.com';
+      } else {
+        adminBtn.classList.add('active');
+        studentBtn.classList.remove('active');
+        document.getElementById('email').value = 'admin@example.com';
+      }
+    }
+  </script>
 </body>
 </html>
