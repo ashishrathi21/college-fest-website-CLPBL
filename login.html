@@ -3,11 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Login | Quasars</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Roboto:wght@500&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
   <style>
+
+    :root {
+  --bg-color: #ffffff;
+  --text-color: #0c1830;
+  --primary-color: #1b305a;
+  --secondary-color: rgb(6, 106, 123);
+  --button-color: rgb(0, 166, 255);
+  --hover-color: rgb(8, 181, 211);
+  --nav-shadow: #0c1830;
+  --image-shadow: rgb(8, 181, 211);
+}
     * {
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+     font-family: "Ubuntu", sans-serif;
     }
 
     body {
@@ -28,10 +42,13 @@
     }
 
     .login-container h1 {
-      color: #007bff;
+      color: var(--primary-color);
       font-size: 26px;
       text-align: center;
       margin-bottom: 5px;
+    }
+    .login-container h1 span{
+      color: var(--button-color);
     }
 
     .login-container p {
@@ -56,12 +73,12 @@
        border-radius: 7px;
       background: #fff;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 500;
       transition: all 0.3s ease;
     }
 
     .account-type button.active {
-      background-color: #0099ff;
+      background: linear-gradient(90deg, var(--button-color), var(--hover-color));
       color: #fff;
       border: none;
     }
@@ -73,7 +90,7 @@
     .form-group label {
       display: block;
       margin-bottom: 6px;
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .form-group input {
@@ -96,7 +113,7 @@
     .form-group button {
       width: 100%;
       padding: 12px;
-      background-color: #0099ff;
+      background: linear-gradient(90deg, var(--button-color), var(--hover-color));
       border: none;
       color: white;
       border-radius: 6px;
@@ -115,7 +132,7 @@
 </head>
 <body>
   <div class="login-container">
-    <h1><strong>Quasars</strong></h1>
+    <h1><strong><span>Q</span>uasars</strong></h1>
     <p>Sign in to access your dashboard</p>
 
     <div class="account-type">
