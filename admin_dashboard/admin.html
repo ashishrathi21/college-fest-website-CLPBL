@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - Quasars</title>
+   <!-- Fonts & Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Roboto:wght@500&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="dashboard">
+      <!-- Sidebar Navigation -->
+      <nav class="sidebar">
+        <div class="logo">
+          <h2><span class="Q">Q</span>uasars</h2>
+        </div>
+        <div class="user-profile">
+          <img
+            src="../assets/images.jpg"
+            alt="User Profile"
+            class="avatar"
+          />
+          <div class="user-info">
+            <h4>Admin User</h4>
+            <p>admin@example.com</p>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li class="active">
+            <a href="admin.html"><i class="fa-solid fa-house"></i>Home</a>
+          </li>
+          <li>
+            <a href="eventdashboard.html"><i class="fa-solid fa-calendar-days"></i>Manage Events</a>
+          </li>
+          <li>
+            <a href="myregistration.html"><i class="fa-solid fa-address-card"></i>View Participants</a>
+          </li>
+          <li>
+            <a href="notification.html"><i class="fa-solid fa-bell"></i>Send Notifications</a>
+          </li>
+          <li>
+            <a href="notification.html"><i class="fa-solid fa-chart-simple"></i></i>Analytics</a>
+          </li>
+        </ul>
+       <div class="logout-icon">
+        <button class="logout-icon-1" onclick="goToLogin()">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <div class="log-out">
+            <p>Log Out</p>
+          </div>
+          </button>
+        </div>
+      </nav>
+
+
+    <main class="main-content">
+      <header class="top-bar">
+        <h1>Admin Dashboard</h1>
+        <div class="top-actions">
+          <button>Create New Event</button>
+          <button>Manage Participants</button>
+          <button>View Analytics</button>
+        </div>
+      </header>
+
+      <section class="summary-cards">
+        <div class="card">
+          <div class="flexw"><h3>Total Events</h3>
+          <p>12</p>
+          <small class="green">6 upcoming events</small></div>
+          <div><i class="fa-solid fa-calendar-days event"></i></div>
+        </div>
+        <div class="card">
+          <div class="flexw"><h3>Total Registrations</h3>
+          <p>248</p>
+          <small class="orange">15 pending approvals</small></div>
+          <div><i class="fa-regular fa-hourglass-half event"></i></div>
+        </div>
+        <div class="card">  
+         <div class="flexw"> <h3>Event Categories</h3>
+          <p>5</p>
+          <small > <span class="purple">Cultural, Technical </span>& more</small></div>
+          <div><i class="fa-solid fa-layer-group event"></i></div>
+        </div>
+        <div class="card">
+          <div class="flexw"><h3>Revenue</h3>
+          <p>₹26,500</p>
+          <small><span class="green">+12%</span> vs previous year</small></div>
+          <div><i class="fa-regular fa-money-bill-1 event"></i></div>
+        </div>
+      </section>
+
+      <section class="chart-section">
+        <div class="chart-card">
+          <h3>Event Registrations</h3>
+          <canvas id="registrationsChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Popular Events</h3>
+          <canvas id="popularEventsChart"></canvas>
+        </div>
+      </section>
+
+      <section class="table-section">
+        <h3>Recent Registrations</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th><th>Event</th><th>Status</th><th>Time</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="registrationsTable">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </section>
+
+      <section class="bottom-section">
+        <div class="quick-actions">
+          <h3>Quick Actions</h3>
+          <button>Approve Registrations</button>
+          <button>Schedule New Event</button>
+          <button>Attendance Tracking</button>
+          <button>Issue Certificates</button>
+        </div>
+        <div class="system-alerts">
+          <h3>System Alerts</h3>
+          <ul>
+            <li class="warning">⚠ Low space warning</li>
+            <li class="info">🔔 Schedule reminder</li>
+            <li class="success">✅ System updated</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

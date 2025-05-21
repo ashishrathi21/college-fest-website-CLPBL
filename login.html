@@ -7,6 +7,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Roboto:wght@500&family=Ubuntu:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
   <style>
 
     :root {
@@ -128,6 +129,17 @@
       color: #666;
       margin-top: 15px;
     }
+      .note {
+      font-size: 13px;
+      text-align: center;
+      color: #666;
+      margin-top: 15px;
+    }
+     .note a{
+        text-decoration: none;
+        color: var(--button-color);
+    }
+    
   </style>
 </head>
 <body>
@@ -172,23 +184,45 @@
     <div class="demo-text">
       For demo: Student login (student@example.com) or Admin login (admin@example.com)
     </div>
+    <div class="note">
+      Don't have Account ?  <a href="signup.html">Register</a>
+    </div>
   </div>
 
   <script>
-    function selectAccount(type) {
-      const studentBtn = document.getElementById('studentBtn');
-      const adminBtn = document.getElementById('adminBtn');
+   
+  let selectedAccount = 'student'; // Default account
 
-      if (type === 'student') {
-        studentBtn.classList.add('active');
-        adminBtn.classList.remove('active');
-        document.getElementById('email').value = 'student@example.com';
-      } else {
-        adminBtn.classList.add('active');
-        studentBtn.classList.remove('active');
-        document.getElementById('email').value = 'admin@example.com';
-      }
+  function selectAccount(type) {
+    const studentBtn = document.getElementById('studentBtn');
+    const adminBtn = document.getElementById('adminBtn');
+
+    selectedAccount = type;
+
+    if (type === 'student') {
+      studentBtn.classList.add('active');
+      adminBtn.classList.remove('active');
+      document.getElementById('email').value = 'student@example.com';
+    } else {
+      adminBtn.classList.add('active');
+      studentBtn.classList.remove('active');
+      document.getElementById('email').value = 'admin@example.com';
     }
+  }
+
+  document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Stop default submit for now
+
+    // Redirect based on account type
+    if (selectedAccount === 'student') {
+      this.action = 'student_dashboard/studentDash.html';
+    } else {
+      this.action = 'admin_dashboard/admin.html';
+    }
+
+    this.submit(); // Now submit with updated action
+  });
+</script>
   </script>
 </body>
 </html>

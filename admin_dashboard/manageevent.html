@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Events</title>
+  <link rel="stylesheet" href="manageevent.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="content-wrapper">
+    <h2>Manage Events</h2>
+    <div class="search-actions">
+      <input type="text" placeholder="Search events..." />
+      <div class="buttons">
+        <button class="filter-btn"><i class="fas fa-filter"></i> Filter</button>
+        <button class="create-btn"><i class="fas fa-plus"></i> Create Event</button>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Category</th>
+            <th>Date & Time</th>
+            <th>Location</th>
+            <th>Registrations</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="https://via.placeholder.com/40" class="event-img" /> Short Film Competition<br><small>₹200</small></td>
+            <td><span class="badge blue">Arts</span></td>
+            <td><i class="fa fa-calendar"></i> March 20, 2025<br><i class="fa fa-clock"></i> 4:00 PM</td>
+            <td><i class="fa fa-location-dot"></i> Auditorium</td>
+            <td>45</td>
+            <td><span class="status active">Active</span></td>
+            <td>
+              <i class="fa fa-pen edit-icon"></i>
+              <i class="fa fa-trash delete-icon"></i>
+            </td>
+          </tr>
+          <!-- Repeat rows as needed... -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

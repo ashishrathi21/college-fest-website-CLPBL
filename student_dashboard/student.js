@@ -516,3 +516,8 @@ window.onload = function () {
       document.getElementById("nav-about").classList.add("active");
     }
 }
+
+
+function goToLogin() {
+      window.location.href = "../login.html"; // replace with your page
+    }
