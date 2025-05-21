@@ -5,9 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manage Events</title>
   <link rel="stylesheet" href="manageevent.css" />
+  <link rel="stylesheet" href="admin.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <div class="dashboard">
+  <nav class="sidebar">
+        <div class="logo">
+          <h2><span class="Q">Q</span>uasars</h2>
+        </div>
+        <div class="user-profile">
+          <img
+            src="../assets/images.jpg"
+            alt="User Profile"
+            class="avatar"
+          />
+          <div class="user-info">
+            <h4>Admin User</h4>
+            <p>admin@example.com</p>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li class="active">
+            <a href="admin.html"><i class="fa-solid fa-house"></i>Home</a>
+          </li>
+          <li>
+            <a href="eventdashboard.html"><i class="fa-solid fa-calendar-days"></i>Manage Events</a>
+          </li>
+          <li>
+            <a href="myregistration.html"><i class="fa-solid fa-address-card"></i>View Participants</a>
+          </li>
+          <li>
+            <a href="notification.html"><i class="fa-solid fa-bell"></i>Send Notifications</a>
+          </li>
+          <li>
+            <a href="notification.html"><i class="fa-solid fa-chart-simple"></i></i>Analytics</a>
+          </li>
+        </ul>
+       <div class="logout-icon">
+        <button class="logout-icon-1" onclick="goToLogin()">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <div class="log-out">
+            <p>Log Out</p>
+          </div>
+          </button>
+        </div>
+      </nav>
   <div class="content-wrapper">
     <h2>Manage Events</h2>
     <div class="search-actions">
@@ -44,10 +87,59 @@
               <i class="fa fa-trash delete-icon"></i>
             </td>
           </tr>
+          <tr>
+            <td><img src="https://via.placeholder.com/40" class="event-img" /> Short Film Competition<br><small>₹200</small></td>
+            <td><span class="badge blue">Arts</span></td>
+            <td><i class="fa fa-calendar"></i> March 20, 2025<br><i class="fa fa-clock"></i> 4:30 PM</td>
+            <td><i class="fa fa-location-dot"></i> Auditorium</td>
+            <td>25</td>
+            <td><span class="status active">Active</span></td>
+            <td>
+              <i class="fa fa-pen edit-icon"></i>
+              <i class="fa fa-trash delete-icon"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><img src="https://via.placeholder.com/40" class="event-img" /> Short Film Competition<br><small>₹200</small></td>
+            <td><span class="badge blue">Arts</span></td>
+            <td><i class="fa fa-calendar"></i> March 20, 2025<br><i class="fa fa-clock"></i> 4:00 PM</td>
+            <td><i class="fa fa-location-dot"></i> Auditorium</td>
+            <td>45</td>
+            <td><span class="status active">Active</span></td>
+            <td>
+              <i class="fa fa-pen edit-icon"></i>
+              <i class="fa fa-trash delete-icon"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><img src="https://via.placeholder.com/40" class="event-img" /> Short Film Competition<br><small>₹200</small></td>
+            <td><span class="badge blue">Arts</span></td>
+            <td><i class="fa fa-calendar"></i> March 20, 2025<br><i class="fa fa-clock"></i> 4:00 PM</td>
+            <td><i class="fa fa-location-dot"></i> Auditorium</td>
+            <td>45</td>
+            <td><span class="status active">Active</span></td>
+            <td>
+              <i class="fa fa-pen edit-icon"></i>
+              <i class="fa fa-trash delete-icon"></i>
+            </td>
+          </tr>
+          <tr>
+            <td><img src="https://via.placeholder.com/40" class="event-img" /> Short Film Competition<br><small>₹200</small></td>
+            <td><span class="badge blue">Arts</span></td>
+            <td><i class="fa fa-calendar"></i> March 20, 2025<br><i class="fa fa-clock"></i> 4:00 PM</td>
+            <td><i class="fa fa-location-dot"></i> Auditorium</td>
+            <td>45</td>
+            <td><span class="status active">Active</span></td>
+            <td>
+              <i class="fa fa-pen edit-icon"></i>
+              <i class="fa fa-trash delete-icon"></i>
+            </td>
+          </tr>
           <!-- Repeat rows as needed... -->
         </tbody>
       </table>
     </div>
   </div>
+</div>
 </body>
 </html>
