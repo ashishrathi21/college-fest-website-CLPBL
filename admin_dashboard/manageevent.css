@@ -1,18 +1,12 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0f172a;
-  color: white;
-}
 
 .content-wrapper {
   margin: 2rem;
-  width: full;
+  width: 100%;
 }
 
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .search-actions {
@@ -26,7 +20,7 @@ h2 {
   flex: 1;
   padding: 0.75rem;
   border-radius: 8px;
-  border: none;
+  border: 1px solid rgba(0, 214, 252, 0.567);
   margin-right: 1rem;
   font-size: 1rem;
 }
@@ -41,10 +35,7 @@ h2 {
   font-size: 0.9rem;
 }
 
-.filter-btn {
-  background-color: #1e293b;
-  color: white;
-}
+
 
 .create-btn {
   background-color: #0ea5e9;
@@ -75,18 +66,3 @@ th, td {
   overflow-x: hidden;
 }
 
-/* ========================
-   Sidebar
-=========================== */
-.sidebar {
-  width: 250px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  padding: 20px;
-  box-shadow: 2px 0 20px var(--nav-shadow);
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  position: relative;
-  z-index: 10;
-}
