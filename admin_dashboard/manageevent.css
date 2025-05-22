@@ -7,6 +7,7 @@ body {
 
 .content-wrapper {
   margin: 2rem;
+  width: full;
 }
 
 h2 {
