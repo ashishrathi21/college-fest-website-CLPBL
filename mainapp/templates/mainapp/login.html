@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Quasars</title>
+<link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Roboto:wght@500&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+     <link
+      rel="shortcut icon"
+      href="{% static 'mainapp/images/assets/favicon.png' %}"
+      type="image/x-icon"
+    />
+  <style>
+
+    :root {
+  --bg-color: #ffffff;
+  --text-color: #0c1830;
+  --primary-color: #1b305a;
+  --secondary-color: rgb(6, 106, 123);
+  --button-color: rgb(0, 166, 255);
+  --hover-color: rgb(8, 181, 211);
+  --nav-shadow: #0c1830;
+  --image-shadow: rgb(8, 181, 211);
+}
+    * {
+      box-sizing: border-box;
+     font-family: "Ubuntu", sans-serif;
+    }
+
+    body {
+      background: #f2f4f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 500px;
+    }
+
+    .login-container h1 {
+      color: var(--primary-color);
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    .login-container h1 span{
+      color: var(--button-color);
+    }
+
+    .login-container p {
+      color: #888;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .account-type {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      gap: 20px;
+     
+    }
+
+    .account-type button {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+       border-radius: 7px;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .account-type button.active {
+      background: linear-gradient(90deg, var(--button-color), var(--hover-color));
+      color: #fff;
+      border: none;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .form-group input::placeholder {
+      color: #999;
+    }
+
+    .form-group .hint {
+      font-size: 12px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, var(--button-color), var(--hover-color));
+      border: none;
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .demo-text {
+      font-size: 13px;
+      text-align: center;
+      color: #666;
+      margin-top: 15px;
+    }
+      .note {
+      font-size: 13px;
+      text-align: center;
+      color: #666;
+      margin-top: 15px;
+    }
+     .note a{
+        text-decoration: none;
+        color: var(--button-color);
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1><strong><span>Q</span>uasars</strong></h1>
+    <p>Sign in to access your dashboard</p>
+
+    <div class="account-type">
+      <button id="studentBtn" class="active" onclick="selectAccount('student')">Student</button>
+      <button id="adminBtn" onclick="selectAccount('admin')">Admin</button>
+    </div>
+
+    <form id="loginForm" action="student_dashboard/studentDash.html">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="student@example.com"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Enter your password (try 'password')"
+          required
+        />
+        <div class="hint">Hint: use "password" for the demo</div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Sign In</button>
+      </div>
+    </form>
+
+    <div class="demo-text">
+      For demo: Student login (student@example.com) or Admin login (admin@example.com)
+    </div>
+    <div class="note">
+      Don't have Account ?  <a href="/signup/">Register</a>
+    </div>
+  </div>
+
+  <script>
+   
+  let selectedAccount = 'student'; // Default account
+
+  function selectAccount(type) {
+    const studentBtn = document.getElementById('studentBtn');
+    const adminBtn = document.getElementById('adminBtn');
+
+    selectedAccount = type;
+
+    if (type === 'student') {
+      studentBtn.classList.add('active');
+      adminBtn.classList.remove('active');
+      document.getElementById('email').value = 'student@example.com';
+    } else {
+      adminBtn.classList.add('active');
+      studentBtn.classList.remove('active');
+      document.getElementById('email').value = 'admin@example.com';
+    }
+  }
+
+  document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Stop default submit for now
+
+    // Redirect based on account type
+    if (selectedAccount === 'student') {
+      this.action = 'student_dashboard/studentDash.html';
+    } else {
+      this.action = 'admin_dashboard/admin.html';
+    }
+
+    this.submit(); // Now submit with updated action
+  });
+</script>
+  </script>
+</body>
+</html>
