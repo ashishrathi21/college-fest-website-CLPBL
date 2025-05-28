@@ -188,19 +188,15 @@
               </div>
               <div class="chart-content-1">
                <div class="upcoming-events-li-2">
-                <div class="box">
-                  <h2>Short Film</h2>
-                  <p>view Details</p>
-                </div>
-                <div class="box">
-                  <h2>Short Film</h2>
-                  <p>view Details</p>
-                </div>
-                <div  class="box">
-                  <h2>Short Film</h2>
-                  <p>view Details</p>
-                </div>
-               </div>
+  {% for event in registered_events %}
+  <div class="box">
+    <h2>{{ event.title }}</h2>
+    <p>view Details</p>
+  </div>
+  {% empty %}
+  <p>No registered events yet.</p>
+  {% endfor %}
+</div>
               </div>
             </div>
           </div>

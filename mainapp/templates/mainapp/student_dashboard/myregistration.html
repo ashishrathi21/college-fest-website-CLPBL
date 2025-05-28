@@ -15,8 +15,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-  <link rel="shortcut icon" href="{% static 'mainapp/images/assets/favicon.png' %}"  type="image/x-icon" />
-   
+    <link
+      rel="shortcut icon"
+      href="{% static 'mainapp/images/assets/favicon.png' %}"
+      type="image/x-icon"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,7 +37,7 @@
   </head>
   <body>
     <div class="dashboard">
-         <!-- Sidebar Navigation -->
+      <!-- Sidebar Navigation -->
       <nav class="sidebar">
         <div class="logo">
           <h2><span class="Q">Q</span>uasars</h2>
@@ -50,30 +54,36 @@
           </div>
         </div>
         <ul class="nav-links">
-          <li >
+          <li>
             <a href="/dashboard/"><i class="fa-solid fa-house"></i>Home</a>
           </li>
-          <li >
-            <a href="/event_dashboard/"><i class="fa-solid fa-calendar-days"></i>Events</a>
+          <li>
+            <a href="/event_dashboard/"
+              ><i class="fa-solid fa-calendar-days"></i>Events</a
+            >
           </li>
           <li class="active">
-            <a href="/my_registration/"><i class="fa-solid fa-address-card"></i>My registrations</a>
+            <a href="/my_registration/"
+              ><i class="fa-solid fa-address-card"></i>My registrations</a
+            >
           </li>
           <li>
-            <a href="/notification/"><i class="fa-solid fa-bell"></i>Notifications</a>
+            <a href="/notification/"
+              ><i class="fa-solid fa-bell"></i>Notifications</a
+            >
           </li>
         </ul>
-       <div class="logout-icon">
-        <button class="logout-icon-1" onclick="goToLogin()">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>
-          <div class="log-out">
-            <p><a href="{% url 'logout' %}" >Logout</a></p>
-          </div>
+        <div class="logout-icon">
+          <button class="logout-icon-1" onclick="goToLogin()">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <div class="log-out">
+              <p><a href="{% url 'logout' %}">Logout</a></p>
+            </div>
           </button>
         </div>
       </nav>
 
-    <main class="content">
+      <main class="content">
         <header class="top-bar">
           <div class="heading-container">
             <h1>Your Registered Events</h1>
@@ -85,45 +95,20 @@
             </div> -->
         </header>
 
-         
-
-       <div class="schedule-grid">
-        
-        <div class="event-cards">
-            <img src="{% static 'mainapp/images/scheduleImages/event3.jpg' %}" >
-            <h3>Short Film </h3>
-            <p>Date: April 06, 2025</p>
-            <p>Time: 02:00 PM Onwards</p>
-            {% comment %} <button class="register-btn">Register</button> {% endcomment %}
-          </div>
-           <div class="event-cards">
-            <img src="{% static 'mainapp/images/scheduleImages/event6.jpg' %}" >
-            <h3>Craft Exhibition & Sketch</h3>
-            <p>Date: April 07, 2025</p>
-            <p>Time: 10:30 AM Onwards</p>
-            {% comment %} <button class="register-btn">Register</button> {% endcomment %}
-          </div>
+        <div class="schedule-grid">
+          {% for reg in registrations %}
           <div class="event-cards">
-          <img src="{% static 'mainapp/images/scheduleImages/event8.jpg' %}" >
-            <h3>Mehendi</h3>
-            <p>Date: April 09, 2025</p>
-            <p>Time: 11:00 AM Onwards</p>
-          {% comment %} <button class="register-btn">Register</button> {% endcomment %}
+            <img src="{{ reg.event.image.url }}" />
+            <h3>{{ reg.event.title }}</h3>
+            <p>Date: {{ reg.event.date }}</p>
+            <p>Time: {{ reg.event.time }}</p>
+          </div>
+          {% empty %}
+          <p>No events registered.</p>
+          {% endfor %}
         </div>
-          <div class="event-cards">
-           <img src="{% static 'mainapp/images/scheduleImages/event10.jpg' %}" >
-            <h3>Musical Skit</h3>
-          <p>Date: April 10 & 11 , 2025</p>
-            <p>On Main Ground</p>
-            {% comment %} <button class="register-btn">Register</button> {% endcomment %}
-          </div>
-          
-          
-      </div>
-
       </main>
-      
     </div>
-   <script src="{% static 'mainapp/js/student.js' %}'"></script>
+    <script src="{% static 'mainapp/js/student.js' %}'"></script>
   </body>
 </html>

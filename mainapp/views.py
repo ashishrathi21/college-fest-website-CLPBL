@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test
-
+from .models import Event, Registration
 
 # Create your views here.
 
@@ -65,10 +65,24 @@ def login_view(request):
 
 @login_required(login_url='login')
 def dashboard(request):
+    user = request.user
+
+    registrations = Registration.objects.filter(user=user)
+    registered_events = [r.event for r in registrations]
+
     return render(request, 'mainapp/student_dashboard/studentDash.html', {
-        'username': request.user.username,
-        'email': request.user.email
+        'username': user.username,
+        'email': user.email,
+        'registered_events': registered_events,
     })
+
+@login_required
+def register_event(request, event_id):
+    if request.method == "POST":
+        event = Event.objects.get(id=event_id)
+        Registration.objects.get_or_create(user=request.user, event=event)
+        return redirect('event_dashboard')
+
 
 def logout_user(request):
     logout(request)
@@ -87,17 +101,24 @@ def admin_dashboard(request):
     }
     return render(request, 'mainapp/admin_dashboard/admin.html', context)
 
+@login_required
 def event_dashboard(request):
+    events = Event.objects.all()  # Get all events
     return render(request, 'mainapp/student_dashboard/eventdashboard.html', {
         'username': request.user.username,
-        'email': request.user.email
+        'email': request.user.email,
+        'events': events  # Pass to template
     })
 
-
+@login_required
 def my_registration(request):
+    user = request.user
+    registrations = Registration.objects.filter(user=user)
+    
     return render(request, 'mainapp/student_dashboard/myregistration.html', {
-        'username': request.user.username,
-        'email': request.user.email
+        'username': user.username,
+        'email': user.email,
+        'registrations': registrations,
     })
 
 def notification(request):
