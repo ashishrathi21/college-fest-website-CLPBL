@@ -102,6 +102,15 @@ def admin_dashboard(request):
     return render(request, 'mainapp/admin_dashboard/admin.html', context)
 
 @login_required
+@user_passes_test(admin_required)
+def manage_event(request):
+    context = {
+        'username': request.user.username,
+        'email': request.user.email,
+    }
+    return render(request, 'mainapp/admin_dashboard/manageevent.html', context)
+
+@login_required
 def event_dashboard(request):
     events = Event.objects.all()  # Get all events
     return render(request, 'mainapp/student_dashboard/eventdashboard.html', {
