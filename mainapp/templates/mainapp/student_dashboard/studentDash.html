@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,12 +9,12 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="student.css">
+     <link rel="stylesheet" href="{% static 'mainapp/css/student.css' %}" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="{% static 'mainapp/images/assets/favicon.png' %}"  type="image/x-icon" />
    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,13 +44,13 @@
             class="avatar"
           />
           <div class="user-info">
-            <h4>Student Dash</h4>
-            <p>student@1234</p>
+            <h4>{{ username }}</h4>
+            <p>{{ email }}</p>
           </div>
         </div>
         <ul class="nav-links">
           <li class="active">
-            <a href="studentDash.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="/dashboard/"><i class="fa-solid fa-house"></i>Home</a>
           </li>
           <li>
             <a href="eventdashboard.html"><i class="fa-solid fa-calendar-days"></i>Events</a>
@@ -65,7 +66,7 @@
         <button class="logout-icon-1" onclick="goToLogin()">
           <i class="fa-solid fa-arrow-right-from-bracket"></i>
           <div class="log-out">
-            <p>Log Out</p>
+            <p><a href="{% url 'logout' %}" >Logout</a></p>
           </div>
           </button>
         </div>
@@ -75,7 +76,7 @@
       <main class="content">
         <header class="top-bar">
           <div class="heading-container">
-            <h1>Welcome, Student !</h1>
+            <h1>Welcome, {{ username }}</h1>
           </div>
           <!-- <div class="btn-5">
               <button onclick="toggleTheme()" id="themeToggle">

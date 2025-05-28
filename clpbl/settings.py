@@ -119,6 +119,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ BASE_DIR / 'mainapp/static' ]
+LOGIN_REDIRECT_URL = '/dashboard/'  # or use the name of your URL route
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

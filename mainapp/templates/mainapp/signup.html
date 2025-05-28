@@ -106,6 +106,22 @@
         text-decoration: none;
         color: var(--button-color);
     }
+
+    .back{
+      margin-top:20px;
+      text-align:center;
+      font-size:14px;
+      color:var(--button-color);
+      cursor:pointer;
+    }
+    .back a{
+      text-decoration: none;
+      margin-top:20px;
+      text-align:center;
+      font-size:14px;
+      color:var(--button-color);
+      cursor:pointer;
+    }
     
   </style>
 </head>
@@ -115,15 +131,8 @@
   <h1><strong><span>Q</span>uasars</strong></h1>
   <p>Create your student account</p>
 
-  {% if messages %}
-    <div class="messages">
-      {% for message in messages %}
-        {{ message }}
-      {% endfor %}
-    </div>
-  {% endif %}
 
-  <form id="signupForm" method="POST" action="{% url 'register' %}">
+  <form id="signupForm" method="POST" >
     {% csrf_token %}
 
     <div class="form-group">
@@ -148,38 +157,19 @@
       />
     </div>
 
-    <div class="form-group">
-      <label for="id_username">Username</label>
-      <input
-        id="id_username"
-        name="username"
-        type="text"
-        placeholder="Choose a username"
-        required
-      />
-    </div>
 
     <div class="form-group">
       <label for="id_password1">Create Password</label>
       <input
         id="id_password1"
-        name="password1"
+        name="password"
         type="password"
         placeholder="At least 6 characters"
         required
       />
     </div>
 
-    <div class="form-group">
-      <label for="id_password2">Confirm Password</label>
-      <input
-        id="id_password2"
-        name="password2"
-        type="password"
-        placeholder="Confirm your password"
-        required
-      />
-    </div>
+    
 
     <div class="form-group">
       <button type="submit">Create Account</button>
@@ -189,12 +179,15 @@
   <div class="note">
     Already have an account? <a href="{% url 'login' %}">Login In</a>
   </div>
+  {% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+
+  <div class="back"> 
+    <a href="/">Back To Home</a>
+</div>
 </div>
 
-  <script>
-   function alertMessage(){
-    alert("Account Created SuccessFully !!!")
-   }
-  </script>
+
+  
+  
 </body>
 </html>

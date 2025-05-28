@@ -151,6 +151,10 @@ border: 1px solid var(--hover-color);
   justify-content: start;
   
 }
+a{
+  text-decoration: none;
+  color: var(--button-color);
+}
 
 .logout-icon button {
   background-color: transparent;
