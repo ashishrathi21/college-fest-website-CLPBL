@@ -39,7 +39,7 @@
         </div>
         <div class="user-profile">
           <img
-            src="../assets/images.jpg"
+            src="{% static 'mainapp/images/assets/images.jpg' %}"
             alt="User Profile"
             class="avatar"
           />
@@ -53,13 +53,13 @@
             <a href="/dashboard/"><i class="fa-solid fa-house"></i>Home</a>
           </li>
           <li>
-            <a href="eventdashboard.html"><i class="fa-solid fa-calendar-days"></i>Events</a>
+            <a href="/event_dashboard/"><i class="fa-solid fa-calendar-days"></i>Events</a>
           </li>
           <li>
-            <a href="myregistration.html"><i class="fa-solid fa-address-card"></i>My registrations</a>
+            <a href="/my_registration/"><i class="fa-solid fa-address-card"></i>My registrations</a>
           </li>
           <li>
-            <a href="notification.html"><i class="fa-solid fa-bell"></i>Notifications</a>
+            <a href="/notification/"><i class="fa-solid fa-bell"></i>Notifications</a>
           </li>
         </ul>
        <div class="logout-icon">
@@ -209,6 +209,6 @@
         </div>
       </main>
     </div>
-    <script src="student.js"></script>
+    <script src="{% static 'mainapp/js/student.js' %}'"></script>
   </body>
 </html>

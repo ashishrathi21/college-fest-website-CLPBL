@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,13 +9,13 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="student.css">
-    <link rel="stylesheet" href="../schedule.css">
+    <link rel="stylesheet" href="{% static 'mainapp/css/student.css' %}" />
+    <link rel="stylesheet" href="{% static 'mainapp/css/schedule.css' %}" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
+     <link rel="shortcut icon" href="{% static 'mainapp/images/assets/favicon.png' %}"  type="image/x-icon" />
    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,41 +33,41 @@
   </head>
   <body>
     <div class="dashboard">
-      <!-- Sidebar Navigation -->
+     <!-- Sidebar Navigation -->
       <nav class="sidebar">
         <div class="logo">
           <h2><span class="Q">Q</span>uasars</h2>
         </div>
         <div class="user-profile">
           <img
-            src="../assets/images.jpg"
+            src="{% static 'mainapp/images/assets/images.jpg' %}"
             alt="User Profile"
             class="avatar"
           />
           <div class="user-info">
-            <h4>Student Dash</h4>
-            <p>student@1234</p>
+            <h4>{{ username }}</h4>
+            <p>{{ email }}</p>
           </div>
         </div>
         <ul class="nav-links">
           <li >
-            <a href="studentDash.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="/dashboard/"><i class="fa-solid fa-house"></i>Home</a>
           </li>
           <li class="active">
-            <a href="eventdashboard.html"><i class="fa-solid fa-calendar-days"></i>Events</a>
+            <a href="/event_dashboard/"><i class="fa-solid fa-calendar-days"></i>Events</a>
           </li>
           <li>
-            <a href="myregistration.html"><i class="fa-solid fa-address-card"></i>My registrations</a>
+            <a href="/my_registration/"><i class="fa-solid fa-address-card"></i>My registrations</a>
           </li>
           <li>
-            <a href="notification.html"><i class="fa-solid fa-bell"></i>Notifications</a>
+            <a href="/notification/"><i class="fa-solid fa-bell"></i>Notifications</a>
           </li>
         </ul>
        <div class="logout-icon">
         <button class="logout-icon-1" onclick="goToLogin()">
           <i class="fa-solid fa-arrow-right-from-bracket"></i>
           <div class="log-out">
-            <p>Log Out</p>
+            <p><a href="{% url 'logout' %}" >Logout</a></p>
           </div>
           </button>
         </div>
@@ -88,87 +89,87 @@
 
        <div class="schedule-grid">
         <div class="event-cards">
-          <img src="../scheduleImages/event1.jpg" />
-          <h3>Short Film</h3>
-          <p>Date: March 20, 2025</p>
-          <p>Time: 4:00 PM</p>
-          <button class="register-btn">Register</button>
+          <img src="{% static 'mainapp/images/scheduleImages/event1.jpg' %}" />
+          <h3>Quasars Schedule</h3>
+          {% comment %} <p>Date: March 20, 2025</p>
+          <p>Time: 4:00 PM</p> {% endcomment %}
+          <button class="register-btn">View Schedule</button>
         </div>
         <div class="event-cards">
-            <img src="../scheduleImages/event2.jpg" >
+            <img src="{% static 'mainapp/images/scheduleImages/event2.jpg' %}" >
+            <h3>Quasars Indoor Events </h3>
+            {% comment %} <p>Date: March 20, 2025</p>
+            <p>Time: 4:00 PM</p> {% endcomment %}
+            <button class="register-btn">View Events</button>
+          </div>
+          <div class="event-cards">
+            <img src="{% static 'mainapp/images/scheduleImages/event3.jpg' %}" >
             <h3>Short Film </h3>
-            <p>Date: March 20, 2025</p>
-            <p>Time: 4:00 PM</p>
+            <p>Date: April 06, 2025</p>
+            <p>Time: 02:00 PM Onwards</p>
             <button class="register-btn">Register</button>
           </div>
           <div class="event-cards">
-            <img src="../scheduleImages/event3.jpg" >
-            <h3>Short Film </h3>
-            <p>Date: March 20, 2025</p>
-            <p>Time: 4:00 PM</p>
+            <img src="{% static 'mainapp/images/scheduleImages/event4.jpg' %}" >
+            <h3>Photography</h3>
+             <p>Date: April 06, 2025</p>
+            <p>Time: 01:00 PM Onwards</p>
             <button class="register-btn">Register</button>
           </div>
           <div class="event-cards">
-            <img src="../scheduleImages/event4.jpg" >
-            <h3>Short Film </h3>
-            <p>Date: March 20, 2025</p>
-            <p>Time: 4:00 PM</p>
+            <img src="{% static 'mainapp/images/scheduleImages/event5.jpg' %}" >
+            <h3>Antakshari</h3>
+            <p>Date: April 07, 2025</p>
+            <p>Time: 11:00 AM Onwards</p>
             <button class="register-btn">Register</button>
           </div>
           <div class="event-cards">
-            <img src="../scheduleImages/event5.jpg" >
-            <h3>Short Film </h3>
-            <p>Date: March 20, 2025</p>
-            <p>Time: 4:00 PM</p>
+            <img src="{% static 'mainapp/images/scheduleImages/event6.jpg' %}" >
+            <h3>Craft Exhibition & Sketch</h3>
+            <p>Date: April 07, 2025</p>
+            <p>Time: 10:30 AM Onwards</p>
             <button class="register-btn">Register</button>
           </div>
           <div class="event-cards">
-            <img src="../scheduleImages/event6.jpg" >
-            <h3>Short Film </h3>
-            <p>Date: March 20, 2025</p>
-            <p>Time: 4:00 PM</p>
+            <img src="{% static 'mainapp/images/scheduleImages/event7.jpg' %}" >
+            <h3>Quasars Lunch</h3>
+            {% comment %} <p>Date: March 20, 2025</p>
+            <p>Time: 4:00 PM</p> {% endcomment %}
+            <button class="register-btn">View Lunch Flyer</button>
+          </div>
+          <div class="event-cards">
+            <img src="{% static 'mainapp/images/scheduleImages/event8.jpg' %}" >
+            <h3>Mehendi</h3>
+            <p>Date: April 09, 2025</p>
+            <p>Time: 11:00 AM Onwards</p>
             <button class="register-btn">Register</button>
           </div>
           <div class="event-cards">
-            <img src="../scheduleImages/event7.jpg" >
-            <h3>Short Film </h3>
-            <p>Date: March 20, 2025</p>
-            <p>Time: 4:00 PM</p>
+            <img src="{% static 'mainapp/images/scheduleImages/event9.jpg' %}" >
+            <h3>Rangoli</h3>
+            <p>Date: April 09, 2025</p>
+            <p>Time: 10:30 AM Onwards</p>
             <button class="register-btn">Register</button>
           </div>
           <div class="event-cards">
-            <img src="../scheduleImages/event8.jpg" >
-            <h3>Short Film </h3>
-            <p>Date: March 20, 2025</p>
-            <p>Time: 4:00 PM</p>
+            <img src="{% static 'mainapp/images/scheduleImages/event10.jpg' %}" >
+            <h3>Musical Skit</h3>
+          <p>Date: April 10 & 11 , 2025</p>
+            <p>On Main Ground</p>
             <button class="register-btn">Register</button>
           </div>
           <div class="event-cards">
-            <img src="../scheduleImages/event9.jpg" >
-            <h3>Short Film </h3>
-            <p>Date: March 20, 2025</p>
-            <p>Time: 4:00 PM</p>
+            <img src="{% static 'mainapp/images/scheduleImages/event11.jpg' %}" >
+            <h3>Solo & Duet Singing</h3>
+            <p>Date: April 10 & 11 , 2025</p>
+            <p>On Main Ground</p>
             <button class="register-btn">Register</button>
           </div>
           <div class="event-cards">
-            <img src="../scheduleImages/event10.jpg" >
-            <h3>Short Film </h3>
-            <p>Date: March 20, 2025</p>
-            <p>Time: 4:00 PM</p>
-            <button class="register-btn">Register</button>
-          </div>
-          <div class="event-cards">
-            <img src="../scheduleImages/event11.jpg" >
-            <h3>Short Film </h3>
-            <p>Date: March 20, 2025</p>
-            <p>Time: 4:00 PM</p>
-            <button class="register-btn">Register</button>
-          </div>
-          <div class="event-cards">
-            <img src="../scheduleImages/event12.jpg" >
-            <h3>Short Film </h3>
-            <p>Date: March 20, 2025</p>
-            <p>Time: 4:00 PM</p>
+            <img src="{% static 'mainapp/images/scheduleImages/event12.jpg' %}" >
+            <h3>Solo & Group Dance</h3>
+            <p>Date: April 10 & 11 , 2025</p>
+            <p>On Main Ground</p>
             <button class="register-btn">Register</button>
           </div>
           
@@ -177,6 +178,6 @@
       </main>
       
     </div>
-    <script src="student.js"></script>
+   <script src="{% static 'mainapp/js/student.js' %}'"></script>
   </body>
 </html>

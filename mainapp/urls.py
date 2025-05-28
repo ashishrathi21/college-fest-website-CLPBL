@@ -12,4 +12,7 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('logout/', views.logout_user, name='logout'),
     path('admin_dashboard/', views.admin_dashboard, name='admin_dashboard'),
+    path('event_dashboard/', views.event_dashboard, name='event_dashboard'),
+    path('my_registration/', views.my_registration, name='my_registration'),
+    path('notification/', views.notification, name='notification'),
 ]

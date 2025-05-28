@@ -7,6 +7,20 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 
 # Create your views here.
 
+def index(request):
+    return render(request, 'mainapp/index.html')
+
+def schedule(request):
+    return render(request, 'mainapp/schedule.html')
+
+def about(request):
+    return render(request, 'mainapp/about.html')
+
+def contact(request):
+    return render(request, 'mainapp/contact.html')
+
+
+
 def signup_view(request):
     if request.method == 'POST':
         username = request.POST['fullname']
@@ -60,18 +74,6 @@ def logout_user(request):
     logout(request)
     return redirect('login')
 
-def index(request):
-    return render(request, 'mainapp/index.html')
-
-def schedule(request):
-    return render(request, 'mainapp/schedule.html')
-
-def about(request):
-    return render(request, 'mainapp/about.html')
-
-def contact(request):
-    return render(request, 'mainapp/contact.html')
-
 
 def admin_required(user):
     return user.is_staff
@@ -85,9 +87,22 @@ def admin_dashboard(request):
     }
     return render(request, 'mainapp/admin_dashboard/admin.html', context)
 
+def event_dashboard(request):
+    return render(request, 'mainapp/student_dashboard/eventdashboard.html', {
+        'username': request.user.username,
+        'email': request.user.email
+    })
 
 
+def my_registration(request):
+    return render(request, 'mainapp/student_dashboard/myregistration.html', {
+        'username': request.user.username,
+        'email': request.user.email
+    })
 
-
-
+def notification(request):
+    return render(request, 'mainapp/student_dashboard/notification.html', {
+        'username': request.user.username,
+        'email': request.user.email
+    })
 
