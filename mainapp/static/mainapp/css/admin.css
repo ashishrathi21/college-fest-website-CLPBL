@@ -84,7 +84,10 @@ html, body {
 .logo .Q {
   color: var(--hover-color);
 }
-
+a{
+  text-decoration: none;
+  color: var(--button-color);
+}
 .user-profile {
   display: flex;
   align-items: center;
