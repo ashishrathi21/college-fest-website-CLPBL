@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>View Participants - {{ event.name }}</title>
+  <link rel="stylesheet" href="{% static 'mainapp/css/admin.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>Participants for "{{ event.name }}"</h1>
+
+    {% if participants %}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Registration Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in participants %}
+          <tr>
+            <td>{{ p.name }}</td>
+            <td>{{ p.email }}</td>
+            <td>{{ p.timestamp }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No participants registered for this event yet.</p>
+    {% endif %}
+
+    <a href="/admin_dashboard/" class="back-btn">← Back to Dashboard</a>
+  </div>
+</body>
+</html>

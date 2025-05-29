@@ -19,7 +19,6 @@ urlpatterns = [
     path('register/event_dashboard/', views.register_event, name='register_event'),
 
     path('create_event/', views.create_event, name='create_event'),
-     path('event/delete/<int:event_id>/', views.delete_event, name='delete_event'),
-
+    path('event/delete/<int:event_id>/', views.delete_event, name='delete_event'),
+    path('admin_dashboard/view_participants/<int:event_id>/', views.view_participants, name='view_participants'),
 ]
- 
