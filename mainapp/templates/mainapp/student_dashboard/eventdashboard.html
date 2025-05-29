@@ -98,11 +98,13 @@
         <div class="schedule-grid">
   {% for event in events %}
     <div class="event-cards">
-      <img src="{{ event.image.url }}" />
-      <h3>{{ event.title }}</h3>
-      <p>Date: {{ event.date }}</p>
-      <p>Time: {{ event.time }}</p>
-      <form method="POST" action="{% url 'register_event' event.id %}">
+      <img src="{{ event.image }}" />
+      <h3>{{ event.name}}</h3>
+      <p>Date: {{ event.date_time|date:"M d, Y" }}</p>
+      <p>Time: {{ event.date_time|time:"h:i A" }}</p>
+      <p>Venue: {{ event.location }}</p>
+
+      <form method="POST" action="{% url 'register_event' %}">
         {% csrf_token %}
         <button class="register-btn">Register</button>
       </form>

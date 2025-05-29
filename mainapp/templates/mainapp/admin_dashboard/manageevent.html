@@ -82,9 +82,11 @@
     <div class="search-actions">
       <input type="text" placeholder="Search events..." />
       <div class="buttons">
-        <button class="create-btn" onclick="window.location.href='{% url 'create_event' %}'">
+        <button class="create-btn">
+        <a href="{% url 'create_event' %}" class="create-btn">
   <i class="fas fa-plus"></i> Create Event
-</button>
+</a></button>
+
 
       </div>
     </div>
@@ -106,7 +108,7 @@
   {% for event in events %}
   <tr>
     <td>
-      <img src="{{ event.image.url }}" class="event-img" alt="{{ event.name }}" />
+      <img src="{{ event.image }}" class="event-img" alt="{{ event.name }}" />
       {{ event.name }}<br><small>₹{{ event.price }}</small>
     </td>
     <td><span class="badge blue">{{ event.category }}</span></td>

@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import Event, Registration
 from .forms import EventForm
+from .models import CreateEvent
 
 # Create your views here.
 
@@ -105,20 +106,21 @@ def admin_dashboard(request):
 @login_required
 @user_passes_test(admin_required)
 def manage_event(request):
-    events = Event.objects.all()
+    events = CreateEvent.objects.all()
     context = {
         'username': request.user.username,
         'email': request.user.email,
+        'events': events,   
     }
     return render(request, 'mainapp/admin_dashboard/manageevent.html', context)
 
 @login_required
 def event_dashboard(request):
-    events = Event.objects.all()  # Get all events
+    events = CreateEvent.objects.all()  # Use the correct model
     return render(request, 'mainapp/student_dashboard/eventdashboard.html', {
         'username': request.user.username,
         'email': request.user.email,
-        'events': events  # Pass to template
+        'events': events
     })
 
 @login_required
