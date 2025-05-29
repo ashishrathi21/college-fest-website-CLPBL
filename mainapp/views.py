@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import Event, Registration
 from .forms import EventForm
 from .models import CreateEvent
+from django.http import Http404
+
 
 # Create your views here.
 
@@ -150,3 +152,15 @@ def create_event(request):
     else:
         form = EventForm()
     return render(request, 'mainapp/admin_dashboard/create_event.html', {'form': form}) 
+
+
+def delete_event(request, event_id):
+    if request.method == 'POST':
+        try:
+            event = Event.objects.get(id=event_id)
+        except Event.DoesNotExist:
+            raise Http404("Event not found")
+        event.delete()
+        return redirect('event_dashboard')
+    else:
+        return redirect('event_dashboard')

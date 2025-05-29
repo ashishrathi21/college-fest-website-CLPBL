@@ -117,8 +117,12 @@
     <td><!-- You can add registration count here --></td>
     <td><span class="status active">{{ event.status }}</span></td>
     <td>
-      <i class="fa fa-pen edit-icon"></i>
-      <i class="fa fa-trash delete-icon"></i>
+      <form method="POST" action="{% url 'delete_event' event.id %}" style="display:inline;">
+  {% csrf_token %}
+  <button type="submit" class="delete-icon" style="background:none; border:none; cursor:pointer;">
+    <i class="fa fa-trash"></i>
+  </button>
+</form>
     </td>
   </tr>
   {% empty %}
