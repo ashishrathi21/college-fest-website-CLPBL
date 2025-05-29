@@ -18,4 +18,7 @@ urlpatterns = [
     path('notification/', views.notification, name='notification'),
     path('register/event_dashboard/', views.register_event, name='register_event'),
 
+    path('create_event/', views.create_event, name='create_event'),
+
 ]
+ 

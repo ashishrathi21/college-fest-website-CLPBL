@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import Event, Registration
+from .forms import EventForm
 
 # Create your views here.
 
@@ -104,6 +105,7 @@ def admin_dashboard(request):
 @login_required
 @user_passes_test(admin_required)
 def manage_event(request):
+    events = Event.objects.all()
     context = {
         'username': request.user.username,
         'email': request.user.email,
@@ -136,3 +138,13 @@ def notification(request):
         'email': request.user.email
     })
 
+
+def create_event(request):
+    if request.method == "POST":
+        form = EventForm(request.POST, request.FILES)  # in case you want image upload
+        if form.is_valid():
+            form.save()
+            return redirect('manage_event')  # redirect to your manage events page after creation
+    else:
+        form = EventForm()
+    return render(request, 'mainapp/admin_dashboard/create_event.html', {'form': form}) 
