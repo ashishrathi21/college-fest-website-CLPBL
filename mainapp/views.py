@@ -165,10 +165,20 @@ def delete_event(request, event_id):
     else:
         return redirect('event_dashboard')
 
-def view_participants(request, event_id):
-    event = get_object_or_404(Event, id=event_id)
-    participants = Registration.objects.filter(event=event)
-    return render(request, 'mainapp/admin_dashboard/view_participants.html', {
-        'event': event,
-        'participants': participants
-    })
+# def view_participants(request, event_id):
+#     event = get_object_or_404(Event, id=event_id)
+#     participants = Registration.objects.filter(event=event)
+#     return render(request, 'mainapp/admin_dashboard/view_participants.html', {
+#         'event': event,
+#         'participants': participants
+#     })
+
+
+
+def view_participants(request):
+
+    context = {
+        'username': request.user.username,
+        'email': request.user.email,
+    }
+    return render(request, 'mainapp/admin_dashboard/view_participants.html',context)
