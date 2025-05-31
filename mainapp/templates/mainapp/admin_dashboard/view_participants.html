@@ -1,4 +1,5 @@
 
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -63,9 +64,7 @@
           <li>
             <a href="notification.html"><i class="fa-solid fa-bell"></i>Send Notifications</a>
           </li>
-          <li>
-            <a href="notification.html"><i class="fa-solid fa-chart-simple"></i></i>Analytics</a>
-          </li>
+         
         </ul>
        <div class="logout-icon">
         <button class="logout-icon-1" onclick="goToLogin()">
@@ -76,41 +75,35 @@
           </button>
         </div>
       </nav>
-
-
-    <div class="container">
-    <h1>Participants for "{{ event.name }}"</h1>
-
-    {% if participants %}
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Registration Time</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for p in participants %}
-          <tr>
-            <td>{{ p.name }}</td>
-            <td>{{ p.email }}</td>
-            <td>{{ p.timestamp }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    {% else %}
-      <p>No participants registered for this event yet.</p>
-    {% endif %}
-
-    <a href="/admin_dashboard/" class="back-btn">← Back to Dashboard</a>
-  </div>
+ <main class="main-content">
+<h1>Registered Participants</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Participant</th>
+      <th>Email</th>
+      <th>Registered At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <br><br>
+    {% for reg in registrations %}
+    <tr>
+      <td>{{ reg.event.name }}</td>
+      <td>{{ reg.user.username }}</td>
+      <td>{{ reg.user.email }}</td>
+      <td>{{ reg.registered_at|date:"M d, Y h:i A" }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="4">No participants registered yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+</main>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="{% static 'mainapp/js/admin.js' %}"></script>
 </body>
 </html>
-
-

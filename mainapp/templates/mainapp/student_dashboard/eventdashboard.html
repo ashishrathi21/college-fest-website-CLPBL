@@ -34,6 +34,47 @@
     />
 
     <title>DIEMS | Quasars Events</title>
+
+    <style>
+  .messages {
+    margin: 20px auto;
+    padding: 10px;
+    width: 90%;
+    max-width: 600px;
+    list-style: none;
+    border-radius: 8px;
+  }
+
+  .messages li {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+  }
+
+  .error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
+  .register-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+</style>
+
   </head>
   <body>
     <div class="dashboard">
@@ -95,19 +136,34 @@
             </div> -->
         </header>
 
-        <div class="schedule-grid">
+
+       {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<div class="schedule-grid">
   {% for event in events %}
     <div class="event-cards">
       <img src="{{ event.image }}" />
-      <h3>{{ event.name}}</h3>
+      <h3>{{ event.name }}</h3>
       <p>Date: {{ event.date_time|date:"M d, Y" }}</p>
       <p>Time: {{ event.date_time|time:"h:i A" }}</p>
       <p>Venue: {{ event.location }}</p>
 
-      <form method="POST" action="{% url 'register_event' %}">
-        {% csrf_token %}
-        <button class="register-btn">Register</button>
-      </form>
+      {% if event.id in registered_event_ids %}
+        <button class="register-btn" disabled style="background-color: #ccc; cursor: not-allowed;">
+          Already Registered
+        </button>
+      {% else %}
+        <form method="POST" action="{% url 'register_event' event.id %}">
+          {% csrf_token %}
+          <button class="register-btn">Register</button>
+        </form>
+      {% endif %}
     </div>
   {% endfor %}
 </div>

@@ -83,8 +83,17 @@ def dashboard(request):
 @login_required
 def register_event(request, event_id):
     if request.method == "POST":
-        event = Event.objects.get(id=event_id)
-        Registration.objects.get_or_create(user=request.user, event=event)
+        try:
+            event = CreateEvent.objects.get(id=event_id)
+            registration, created = Registration.objects.get_or_create(user=request.user, event=event)
+
+            if created:
+                messages.success(request, "Successfully registered for event.")
+            else:
+                messages.info(request, "You have already registered for this event.")
+        except CreateEvent.DoesNotExist:
+            messages.error(request, "Event not found.")
+
         return redirect('event_dashboard')
 
 
@@ -118,11 +127,15 @@ def manage_event(request):
 
 @login_required
 def event_dashboard(request):
-    events = CreateEvent.objects.all()  # Use the correct model
+    events = CreateEvent.objects.all()
+    registrations = Registration.objects.filter(user=request.user)
+    registered_event_ids = registrations.values_list('event_id', flat=True)
+
     return render(request, 'mainapp/student_dashboard/eventdashboard.html', {
         'username': request.user.username,
         'email': request.user.email,
-        'events': events
+        'events': events,
+        'registered_event_ids': registered_event_ids
     })
 
 @login_required
@@ -157,28 +170,22 @@ def create_event(request):
 def delete_event(request, event_id):
     if request.method == 'POST':
         try:
-            event = Event.objects.get(id=event_id)
+            event = CreateEvent.objects.get(id=event_id)
         except Event.DoesNotExist:
             raise Http404("Event not found")
         event.delete()
-        return redirect('event_dashboard')
+        return redirect('manage_event')
     else:
-        return redirect('event_dashboard')
-
-# def view_participants(request, event_id):
-#     event = get_object_or_404(Event, id=event_id)
-#     participants = Registration.objects.filter(event=event)
-#     return render(request, 'mainapp/admin_dashboard/view_participants.html', {
-#         'event': event,
-#         'participants': participants
-#     })
-
-
-
+        return redirect('manage_event')
+    
+    
+@login_required
+@user_passes_test(lambda u: u.is_staff)
 def view_participants(request):
-
-    context = {
+    registrations = Registration.objects.select_related('user', 'event').order_by('-registered_at')
+    return render(request, 'mainapp/admin_dashboard/view_participants.html', {
+        'registrations': registrations,
         'username': request.user.username,
-        'email': request.user.email,
-    }
-    return render(request, 'mainapp/admin_dashboard/view_participants.html',context)
+        'email': request.user.email
+    })
+

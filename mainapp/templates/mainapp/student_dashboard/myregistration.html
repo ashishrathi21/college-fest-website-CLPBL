@@ -95,18 +95,19 @@
             </div> -->
         </header>
 
-        <div class="schedule-grid">
-          {% for reg in registrations %}
-          <div class="event-cards">
-            <img src="{{ reg.event.image.url }}" />
-            <h3>{{ reg.event.title }}</h3>
-            <p>Date: {{ reg.event.date }}</p>
-            <p>Time: {{ reg.event.time }}</p>
-          </div>
-          {% empty %}
-          <p>No events registered.</p>
-          {% endfor %}
-        </div>
+       <div class="schedule-grid">
+  {% for reg in registrations %}
+    <div class="event-cards">
+      <img src="{{ reg.event.image.url }}" />
+      <h3>{{ reg.event.name }}</h3>
+      <p>Date: {{ reg.event.date_time|date:"M d, Y" }}</p>
+      <p>Time: {{ reg.event.date_time|time:"h:i A" }}</p>
+    </div>
+  {% empty %}
+    <p>No events registered.</p>
+  {% endfor %}
+</div>
+
       </main>
     </div>
     <script src="{% static 'mainapp/js/student.js' %}'"></script>

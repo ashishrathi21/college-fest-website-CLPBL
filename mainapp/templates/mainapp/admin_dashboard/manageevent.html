@@ -63,9 +63,7 @@
           <li>
             <a href="notification.html"><i class="fa-solid fa-bell"></i>Send Notifications</a>
           </li>
-          <li>
-            <a href="notification.html"><i class="fa-solid fa-chart-simple"></i></i>Analytics</a>
-          </li>
+         
         </ul>
        <div class="logout-icon">
         <button class="logout-icon-1" onclick="goToLogin()">
@@ -99,8 +97,6 @@
             <th>Category</th>
             <th>Date & Time</th>
             <th>Location</th>
-            <th>Registrations</th>
-            <th>Status</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -109,17 +105,14 @@
   <tr>
     <td>
       <img src="{{ event.image }}" class="event-img" alt="{{ event.name }}" />
-      {{ event.name }}<br><small>₹{{ event.price }}</small>
     </td>
     <td><span class="badge blue">{{ event.category }}</span></td>
-    <td><i class="fa fa-calendar"></i> {{ event.date_time|date:"M d, Y" }}<br><i class="fa fa-clock"></i> {{ event.date_time|time:"h:i A" }}</td>
+    <td><i class="fa fa-calendar"></i> {{ event.date_time|date:"M d, Y" }}<br><br><i class="fa fa-clock"></i> {{ event.date_time|time:"h:i A" }}</td>
     <td><i class="fa fa-location-dot"></i> {{ event.location }}</td>
-    <td><!-- You can add registration count here --></td>
-    <td><span class="status active">{{ event.status }}</span></td>
     <td>
-      <form method="POST" action="{% url 'delete_event' event.id %}" style="display:inline;">
+      <form method="POST" action="{% url 'delete_event' event.id %}" style="display:inline; ">
   {% csrf_token %}
-  <button type="submit" class="delete-icon" style="background:none; border:none; cursor:pointer;">
+  <button type="submit" class="delete-icon" style="background:none; border:none; cursor:pointer; color:red; font-size:20px;">
     <i class="fa fa-trash"></i>
   </button>
 </form>
