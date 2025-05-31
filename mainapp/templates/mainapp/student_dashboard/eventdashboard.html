@@ -148,7 +148,7 @@
 <div class="schedule-grid">
   {% for event in events %}
     <div class="event-cards">
-      <img src="{{ event.image }}" />
+      <img src="{{ event.image.url }}" />
       <h3>{{ event.name }}</h3>
       <p>Date: {{ event.date_time|date:"M d, Y" }}</p>
       <p>Time: {{ event.date_time|time:"h:i A" }}</p>

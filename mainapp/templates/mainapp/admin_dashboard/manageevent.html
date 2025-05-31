@@ -31,6 +31,24 @@
    <link rel="stylesheet" href="{% static 'mainapp/css/manageevent.css' %}" />
  <link rel="stylesheet" href="{% static 'mainapp/css/admin.css' %}" />
 
+ <style>
+  .cont{
+     display: flex;
+  align-items: center;
+  justify-content:center;
+  gap: 10px;
+  }
+.event-img{
+  height: 70px;
+  width: 70px;
+  border-radius: 20%;
+}
+
+.side-text{
+  font-size:20px;
+}
+
+ </style>
 </head>
 <body>
   <div class="dashboard">
@@ -103,8 +121,8 @@
         <tbody>
   {% for event in events %}
   <tr>
-    <td>
-      <img src="{{ event.image }}" class="event-img" alt="{{ event.name }}" />
+    <td class="cont">
+      <img src="{{ event.image.url }}" class="event-img" alt="{{ event.name }}" /><p class="side-text">{{ event.name }}</p>
     </td>
     <td><span class="badge blue">{{ event.category }}</span></td>
     <td><i class="fa fa-calendar"></i> {{ event.date_time|date:"M d, Y" }}<br><br><i class="fa fa-clock"></i> {{ event.date_time|time:"h:i A" }}</td>
