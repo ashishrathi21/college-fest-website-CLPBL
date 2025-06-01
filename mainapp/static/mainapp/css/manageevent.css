@@ -38,7 +38,7 @@ h1 {
 
 
 .create-btn {
-  background-color: #0ea5e9;
+  background-color: rgb(14, 165, 233);
   color: white;
 }
 
@@ -50,7 +50,7 @@ h1 {
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #1e293b;
+  background-color: rgb(14, 165, 233);
   border-radius: 8px;
   overflow: hidden;
 }

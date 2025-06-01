@@ -67,49 +67,20 @@
       </div>
 
       <!-- Notifications List -->
-      <div class="notifications">
-        <h2>Recent Notifications</h2>
-
-        <div class="notification-item">
-          <div class="icon">✅</div>
-          <div class="text">
-            <p><strong>Registration Confirmed:</strong> Your registration for Short Film Competition has been confirmed. Please check your email for more details.</p>
-            <span class="time">2 hours ago</span>
-          </div>
-        </div>
-
-        <div class="notification-item">
-          <div class="icon">ℹ️</div>
-          <div class="text">
-            <p><strong>New Event Added:</strong> A new event "Coding Challenge" has been added. Registration opens on March 15, 2025.</p>
-            <span class="time">1 day ago</span>
-          </div>
-        </div>
-
-        <div class="notification-item">
-          <div class="icon">⚠️</div>
-          <div class="text">
-            <p><strong>Venue Change:</strong> The venue for Photography Contest has been changed to Campus Grounds from Studio Room.</p>
-            <span class="time">2 days ago</span>
-          </div>
-        </div>
-
-        <div class="notification-item">
-          <div class="icon">🔔</div>
-          <div class="text">
-            <p><strong>Payment Reminder:</strong> Please complete your payment for Antakshari to confirm your registration.</p>
-            <span class="time">3 days ago</span>
-          </div>
-        </div>
-
-        <div class="notification-item">
-          <div class="icon">🕒</div>
-          <div class="text">
-            <p><strong>Registration Pending:</strong> Your Photography Contest registration is pending approval. We'll notify you once confirmed.</p>
-            <span class="time">5 days ago</span>
-          </div>
-        </div>
+    <div class="notifications">
+  <h2>Recent Notifications</h2>
+  {% for note in notifications %}
+    <div class="notification-item">
+      <div class="icon">🔔</div>
+      <div class="text">
+        <p><strong>{{ note.title }}:</strong> {{ note.message }}</p>
+        <span class="time">{{ note.created_at|timesince }} ago</span>
       </div>
+    </div>
+  {% empty %}
+    <p>No notifications found.</p>
+  {% endfor %}
+</div>
 
       <!-- Upcoming Events -->
       <div class="event-reminders">

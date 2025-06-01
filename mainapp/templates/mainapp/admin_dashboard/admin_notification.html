@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIEMS | Quasars Notifications</title>
+
+    <!-- Icons and Fonts -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+     <link rel="stylesheet" href="{% static 'mainapp/css/admin.css' %}" />
+     <link rel="stylesheet" href="{% static 'mainapp/css/manageevent.css' %}" />
+    <link rel="stylesheet" href="{% static 'mainapp/css/student.css' %}" />
+    <link rel="stylesheet" href="{% static 'mainapp/css/notification.css' %}" />
+    
+    <link
+      rel="shortcut icon"
+      href="{% static 'mainapp/images/assets/favicon.png' %}"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Roboto:wght@500&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <style>
+        table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgb(14, 165, 233);
+  border-radius: 8px;
+  overflow: hidden;
+}
+    </style>
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar Navigation -->
+      <nav class="sidebar">
+        <div class="logo">
+          <h2><span class="Q">Q</span>uasars</h2>
+        </div>
+        <div class="user-profile">
+          <img
+            src="{% static 'mainapp/images/assets/images.jpg' %}"
+            alt="User Profile"
+            class="avatar"
+          />
+          <div class="user-info">
+            <h4>{{ username }}</h4>
+            <p>{{ email }}</p>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="/admin_dashboard/"
+              ><i class="fa-solid fa-house"></i>Home</a
+            >
+          </li>
+          <li>
+            <a href="/manage_event/"
+              ><i class="fa-solid fa-calendar-days"></i>Manage Events</a
+            >
+          </li>
+          <li>
+            <a href="/view_participants/"
+              ><i class="fa-solid fa-address-card"></i>View Participants</a
+            >
+          </li>
+          <li class="active">
+            <a href="/admin_notifications/"
+              ><i class="fa-solid fa-bell"></i>Send Notifications</a
+            >
+          </li>
+        </ul>
+        <div class="logout-icon">
+          <button class="logout-icon-1" onclick="goToLogin()">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <div class="log-out">
+              <p><a href="{% url 'logout' %}">Logout</a></p>
+            </div>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <div class="content-wrapper">
+  <h1>Send Notifications</h1>
+
+  <!-- Search + Create Notification -->
+  <div class="search-actions">
+    <input type="text" placeholder="Search notifications..." />
+    <div class="buttons">
+      <button class="create-btn">
+        <a href="{% url 'send_notification' %}" class="create-btn">
+          <i class="fas fa-plus"></i> New Notification
+        </a>
+      </button>
+    </div>
+  </div>
+
+  <!-- Notification Table -->
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Message</th>
+          <th>Created At</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for note in notifications %}
+        <tr>
+          <td><strong>{{ note.title }}</strong></td>
+          <td>{{ note.message }}</td>
+          <td>{{ note.created_at|date:"M d, Y h:i A" }}</td>
+          <td>
+            <form method="POST" action="{% url 'delete_notification' note.id %}" style="display: inline;">
+              {% csrf_token %}
+              <button type="submit" class="delete-icon" style="background: none; border: none; cursor: pointer; color: red; font-size: 20px;">
+                <i class="fa fa-trash"></i>
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="4">No notifications found.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+    </div>
+  </body>
+  <script src="{% static 'mainapp/js/student.js' %}'"></script>
+</html>

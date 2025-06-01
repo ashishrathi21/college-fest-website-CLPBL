@@ -17,11 +17,13 @@ urlpatterns = [
     path('my_registration/', views.my_registration, name='my_registration'),
     path('notification/', views.notification, name='notification'),
     path('register/event_dashboard/', views.register_event, name='register_event'),
-
     path('create_event/', views.create_event, name='create_event'),
     path('event/delete/<int:event_id>/', views.delete_event, name='delete_event'),
    path('view_participants/', views.view_participants, name='view_participants'),
-
     path('register/<int:event_id>/', views.register_event, name='register_event'),
+    path('send_notification/', views.send_notification, name='send_notification'),
+    path('admin_notifications/', views.admin_notifications, name='admin_notifications'),
+    path('delete_notification/<int:note_id>/', views.delete_notification, name='delete_notification'),
+
 
 ]

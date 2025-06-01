@@ -7,6 +7,9 @@ from .models import Event, Registration
 from .forms import EventForm
 from .models import CreateEvent
 from django.http import Http404
+from .models import Notification
+from .forms import NotificationForm
+
 
 
 # Create your views here.
@@ -189,3 +192,46 @@ def view_participants(request):
         'email': request.user.email
     })
 
+
+
+@login_required
+@user_passes_test(lambda u: u.is_staff)
+def send_notification(request):
+    if request.method == 'POST':
+        form = NotificationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Notification sent successfully.')
+            return redirect('admin_dashboard')
+    else:
+        form = NotificationForm()
+    return render(request, 'mainapp/admin_dashboard/send_notification.html', {'form': form})
+
+@login_required
+def notification(request):
+    notifications = Notification.objects.all().order_by('-created_at')
+    return render(request, 'mainapp/student_dashboard/notification.html', {
+        'username': request.user.username,
+        'email': request.user.email,
+        'notifications': notifications
+    })
+
+
+@login_required
+@user_passes_test(lambda u: u.is_staff)
+def admin_notifications(request):
+    notifications = Notification.objects.all().order_by('-created_at')
+    return render(request, 'mainapp/admin_dashboard/admin_notification.html', {
+        'notifications': notifications,
+        'username': request.user.username,
+        'email': request.user.email,
+    })
+
+
+
+@login_required
+@user_passes_test(lambda u: u.is_staff)
+def delete_notification(request, note_id):
+    if request.method == "POST":
+        Notification.objects.filter(id=note_id).delete()
+    return redirect('admin_notification')
