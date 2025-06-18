@@ -22,7 +22,7 @@ urlpatterns = [
    path('view_participants/', views.view_participants, name='view_participants'),
     path('register/<int:event_id>/', views.register_event, name='register_event'),
     path('send_notification/', views.send_notification, name='send_notification'),
-    path('admin_notifications/', views.admin_notifications, name='admin_notifications'),
+    path('admin_notifications/', views.admin_notifications, name='admin_notification'),
     path('delete_notification/<int:note_id>/', views.delete_notification, name='delete_notification'),
 
 
